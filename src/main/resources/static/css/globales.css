@@ -1,0 +1,97 @@
+:root {
+    --primary-color: #2e2e2e;
+    --white: #fff;
+    --font-family: "Inter", sans-serif;
+    --border-radius: 10px;
+    --red: #db1b1b;
+    --red-hover: #b31010;
+    --blue: #5433e6;
+    --blue-hover: #371ab5;
+    --green: #228b22;
+    --green-hover: #126912;
+}
+
+body {
+    background-color: #181818;
+    font-family: var(--font-family);
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    color: var(--white);
+}
+
+h1 {
+    font-size: 50px;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: var(--white);
+}
+
+li {
+    list-style: none;
+}
+
+input, select, button{
+    border: none;
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 5px;
+    /*outline: none;*/
+}
+
+table {
+    width: 100%;
+    font-size: 13px;
+    color: var(--white);
+}
+
+thead tr td {
+    background-color: var(--primary-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+tbody tr td {
+    max-width: 120px;
+    padding: 5px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid var(--primary-color);
+
+    a {
+        padding: 5px 15px;
+        border-radius: 5px;
+
+        &:hover {
+            transition: .2s ease-in-out;
+        }
+    }
+
+    .edit {
+        background-color: rgb(34, 139, 34);
+        &:hover {
+            background-color: rgb(18, 105, 18);
+        }
+    }
+
+    .delete {
+        background-color: var(--red);
+
+        &:hover {
+            background-color: var(--red-hover);
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

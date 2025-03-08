@@ -1,0 +1,315 @@
+@import url(globales.css);
+
+/** CONTENEDOR **/
+.container {
+    display: flex;
+}
+
+/** MENU LATERAL **/
+.sidebar {
+    position: fixed;
+    width: 225px;
+    height: 97.5vh;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    border: 1px solid #2c2c2c;
+
+    /** TÍTULO **/
+    .sidebar-title {
+        padding: 30px;
+        text-align: center;
+    }
+
+    /** PERFIL USUARIO **/
+    .sidebar-user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        font-size: 15px;
+        margin: 15px;
+        border-radius: var(--border-radius);
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: #535353;
+            transition: .2s ease-in-out;
+            box-shadow: 1px 1px 15px;
+        }
+    }
+
+    /** MENU DE NAVEGACIÓN **/
+    ul {
+        display: grid;
+        row-gap: 5px;
+        padding: 0;
+        font-size: 13px;
+
+        li {
+            .nav-btn {
+                display: flex;
+                margin: 0px 15px;
+                padding: 10px 40px 10px 15px;
+                border-radius: 5px;
+                gap: 20px;
+
+                .icon {
+                    width: 25px;
+                }
+
+                &:hover {
+                     transition: .2s ease-in-out;
+                     background-color: #535353;
+                }
+            }
+
+            .submenu {
+                display: none;
+
+                a {
+                    display: block;
+                    margin: 0px 30px;
+                    padding: 10px;
+                    background-color: #535353;
+                    border-top: 1px solid var(--primary-color);
+
+                    &:hover {
+                        background-color: var(--primary-color);
+                        padding: 10px 9px 10px 9px;
+                        border-left: 1px solid #535353;
+                        border-right: 1px solid #535353 ;
+                    }
+                }
+
+                .ultimo {
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+            }
+
+            .active {
+                background-color: #535353;
+            }
+        }
+    }
+}
+
+/** SIDEBAR NULL **/
+.sidebar-null {
+    width: 225px;
+    height: 97vh;
+}
+
+/** CONTENIDO PRINCIPAL **/
+.main {
+    width: 1050px;
+}
+
+/** NAVEGACIÓN PRINCIPAL **/
+.navbar .nav-list {
+    margin: 0;
+    display: flex;
+    justify-content: end;
+
+    .nav-item {
+        padding: 10px;
+
+        .nav-link {
+            font-size: 18px;
+            padding: 5px;
+        }
+    }
+}
+
+/** SUB-CONTENIDO PRINCIPAL **/
+.main-container {
+    margin: auto;
+    margin-top: 0px;
+
+    /** DESCRIPCIÓN **/
+    .main-description {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        /** BOTÓN NUEVO **/
+        a {
+            background-color: rgb(84, 51, 230);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+
+            &:hover {
+                transition: .2s ease-in-out;
+                background-color: rgb(55, 26, 181);
+            }
+        }
+    }
+}
+
+/** CONTENIDO **/
+.main-content {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.analitics, .analitics-img {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.analitic-box {
+    border-radius: 10px;
+    background-color: #202020;
+    height: 250px;
+    border: 1px solid #2c2c2c;
+}
+
+p {
+    color: #cccccc;
+    margin: 8px 0px;
+}
+
+.analitics-data {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.analitic-box-data {
+    border-radius: 10px;
+    background-color: #202020;
+    height: 120px;
+    border: 1px solid #2c2c2c;
+}
+
+.analitic-box-img {
+    border-radius: 10px;
+    background-color: #202020;
+    height: 420px;
+    border: 1px solid #2c2c2c;
+}
+
+
+
+/** Húesped **/
+
+.table-cargo {
+    width: 50%;
+}
+
+/** CONFIGURACIÓN **/
+.config {
+    padding: 15px 0px;
+}
+
+
+/**  RECEPCIÓN **/
+.recepcion {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    a {
+        background-color: rgb(34, 139, 34);
+        border-radius: var(--border-radius);
+        p, span {
+            font-size: 13px;
+            color: var(--white);
+        }
+    }
+    
+    .btn-content {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .disponibilidad {
+        width: 100%;
+        text-align: center;
+        padding: 5px 0px;
+        background-color: rgb(18, 105, 18);
+        border-radius: var(--border-radius);
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .ocupado {
+        background-color: var(--red);
+
+        .disponibilidad {
+            background-color: var(--red-hover);
+        }
+    }
+
+    .reservado {
+        background-color: rgb(84, 51, 230);
+
+        .disponibilidad {
+            background-color: rgb(55, 26, 181);
+        }
+    }
+}
+
+/** DETALLE **/
+
+.detalle {
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 1px 1px 5px black;
+
+    td {
+        padding: 25px;
+    }
+
+    .th {
+        font-weight: bold;
+    }
+}
+
+/** FORMULARIO REGISTRAR **/
+.register {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; 
+    color: var(--white);
+    font-size: 13px;
+
+    label, button {
+        font-weight: bold;
+    }
+
+    button {
+        color: var(--white);
+        cursor: pointer;
+        width: 100px;
+
+    }
+
+    .btn {
+        display: flex;
+        gap: 15px;
+    }
+
+    .btn-registrar {
+        background-color: var(--green);
+
+        &:hover {
+            background-color: var(--green-hover);
+        }
+    }
+
+    .btn-cancelar {
+        background-color: var(--red);
+
+        &:hover {
+            background-color: var(--red-hover);
+        }
+    }
+}

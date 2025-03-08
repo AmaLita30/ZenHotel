@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input en tiempo real</title>
+</head>
+<body>
+
+    <label for="inputText">Escribe algo: </label>
+    <input type="text" id="inputText" placeholder="Escribe aquí..." oninput="updateLabel()">
+
+    <p>El texto en tiempo real es: <span id="realTimeLabel">Nada aún</span></p>
+
+    <script>
+        function updateLabel() {
+            // Obtener el valor del input
+            var inputValue = document.getElementById('inputText').value;
+            
+            // Actualizar el contenido del label en tiempo real
+            document.getElementById('realTimeLabel').textContent = inputValue;
+        }
+    </script>
+
+</body>
+</html>
