@@ -50,7 +50,7 @@
                 display: flex;
                 margin: 0px 15px;
                 padding: 10px 40px 10px 15px;
-                border-radius: 5px;
+                border-radius: var(--border-radius);
                 gap: 20px;
 
                 .icon {
@@ -102,7 +102,7 @@
 
 /** CONTENIDO PRINCIPAL **/
 .main {
-    width: 1050px;
+    width: 1150px;
 }
 
 /** NAVEGACIÓN PRINCIPAL **/
@@ -136,7 +136,7 @@
         a {
             background-color: rgb(84, 51, 230);
             padding: 10px;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
             font-size: 13px;
             font-weight: bold;
 
@@ -162,7 +162,7 @@
 }
 
 .analitic-box {
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     background-color: #202020;
     height: 250px;
     border: 1px solid #2c2c2c;
@@ -181,14 +181,14 @@ p {
 }
 
 .analitic-box-data {
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     background-color: #202020;
     height: 120px;
     border: 1px solid #2c2c2c;
 }
 
 .analitic-box-img {
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     background-color: #202020;
     height: 420px;
     border: 1px solid #2c2c2c;
@@ -237,6 +237,8 @@ p {
         border-radius: var(--border-radius);
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+
+        
     }
 
     .ocupado {
@@ -288,20 +290,14 @@ p {
     button {
         color: var(--white);
         cursor: pointer;
-        width: 100px;
 
-    }
-
-    .btn {
-        display: flex;
-        gap: 15px;
     }
 
     .btn-registrar {
-        background-color: var(--green);
+        background-color: var(--blue);
 
         &:hover {
-            background-color: var(--green-hover);
+            background-color: var(--blue-hover);
         }
     }
 

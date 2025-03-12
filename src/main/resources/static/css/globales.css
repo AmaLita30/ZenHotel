@@ -2,7 +2,7 @@
     --primary-color: #2e2e2e;
     --white: #fff;
     --font-family: "Inter", sans-serif;
-    --border-radius: 10px;
+    --border-radius: 5px;
     --red: #db1b1b;
     --red-hover: #b31010;
     --blue: #5433e6;
@@ -42,8 +42,11 @@ input, select, button{
     border: none;
     background-color: var(--white);
     padding: 10px;
-    border-radius: 5px;
-    /*outline: none;*/
+    border-radius: var(--border-radius);
+}
+
+input {
+    width: 240px;
 }
 
 table {
@@ -55,7 +58,6 @@ table {
 thead tr td {
     background-color: var(--primary-color);
     font-weight: bold;
-    text-transform: uppercase;
     padding: 10px;
 }
 
@@ -69,7 +71,7 @@ tbody tr td {
 
     a {
         padding: 5px 15px;
-        border-radius: 5px;
+        border-radius: var(--border-radius);
 
         &:hover {
             transition: .2s ease-in-out;
@@ -77,9 +79,10 @@ tbody tr td {
     }
 
     .edit {
-        background-color: rgb(34, 139, 34);
+        background-color: var(--green);
+
         &:hover {
-            background-color: rgb(18, 105, 18);
+            background-color: var(--green-hover);
         }
     }
 

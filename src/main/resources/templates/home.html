@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,135 +7,160 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
+    <!-- CONTENEDOR -->
     <div class="container">
+
+        <!-- MENU LATERAL -->
         <aside class="sidebar">
+
+            <!-- TÍTULO -->
             <h1 class="sidebar-title">
                 <a href="home.html">
                     <i class="fa-solid fa-hotel"></i>
                 </a>
             </h1>
-            <a href="#" class="sidebar-user__profile">Joel Fernandez</a>
-            <div class="search">
-                <nav>
-                    <ul>
-                        <li>
-                            <a class="nav-btn" href="huesped.html">
-                                <div class="icon">
-                                    <i class="fa-sharp fa-solid fa-user"></i>
-                                </div>
-                                <span>Huésped</span>
-                            </a>
-                        </li>
-                        <li class="has-submenu">
-                            <a class="nav-btn" href="habitacion.html">
-                                <div class="icon">
-                                    <i class="fa-solid fa-bed"></i>
-                                </div>
-                                <span>Habitación</span>
-                            </a>
-                            <ul class="submenu">
-                                <li><a href="recepcion.html">Recepción</a></li>
-                                <li><a href="formulario_habitacion.html">New Room</a></li>
-                                <li><a href="#" class="ultimo">Otros</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="nav-btn" href="">
-                                <div class="icon">
-                                    <i class="fa-solid fa-file-invoice-dollar"></i>
-                                </div>
-                                <span>Facturación</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-btn" href="reserva.html">
-                                <div class="icon">
-                                    <i class="fa-solid fa-file-pen"></i>
-                                </div>
-                                <span>Reserva</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-btn" href="">
-                                <div class="icon">
-                                    <i class="fa-solid fa-bell-concierge"></i>
-                                </div>
-                                <span>Servicio Extra</span></a>
-                        </li>
-                        <li>
-                            <a class="nav-btn" href="">
-                                <div class="icon">
-                                    <i class="fa-solid fa-users"></i>
-                                </div>
-                                <span>Empleado</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-btn" href="cargo.html">
-                                <div class="icon">
-                                    <i class="fa-solid fa-ranking-star"></i>
-                                </div>
-                                <span>Cargo</span></a>
-                        </li>
-                        <li>
-                            <a class="nav-btn" href="">
-                                <div class="icon">
-                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                                </div>
-                                <span>Sign Out</span></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </aside>
-        <div class="sidebar-null"></div>
-        <div class="header">
-            <nav class="nav">
-                <ul class="ul">
-                    <li class="li">
-                        <input type="search" name="" id="" placeholder="Search here">
-                    </li>
+
+            <!-- PERFIL USUARIO -->
+            <a href="#" class="sidebar-user">Joel Fernandez</a>
+
+            <!-- MENU DE NAVEGACIÓN -->
+            <nav>
+                <ul>
                     <li>
-                        <a href="#" class="a">
-                            <i class='bx bxs-color'></i>
+                        <a class="nav-btn" href="customer.html">
+                            <div class="icon">
+                                <i class="fa-sharp fa-solid fa-user"></i>
+                            </div>
+                            <span>Customer</span>
                         </a>
                     </li>
                     <li>
-                        <a href="" class="a">
-                            <i class='bx bxs-user'></i>
+                        <a class="nav-btn" href="room.html">
+                            <div class="icon">
+                                <i class="fa-solid fa-bed"></i>
+                            </div>
+                            <span>Room</span>
+                        </a>
+                    </li>
+                    <li class="has-submenu">
+                        <a class="nav-btn" href="recepcion.html">
+                            <div class="icon">
+                                <i class="fa-solid fa-phone-flip"></i>
+                            </div>
+                            <span>Reception</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="reception.html">Reception</a></li>
+                            <li><a href="reservationMain.html">Reservation</a></li>
+                            <li><a href="reservation.html" class="ultimo">Reservation list</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="nav-btn" href="">
+                            <div class="icon">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                            </div>
+                            <span>Invoice</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-btn" href="">
+                            <div class="icon">
+                                <i class="fa-solid fa-bell-concierge"></i>
+                            </div>
+                            <span>Extra Service</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-btn" href="employee.html">
+                            <div class="icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <span>Employees</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-btn" href="roles.html">
+                            <div class="icon">
+                                <i class="fa-solid fa-ranking-star"></i>
+                            </div>
+                            <span>Roles</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-btn" href="">
+                            <div class="icon">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            </div>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- SIDEBAR NULL -->
+        <div class="sidebar-null"></div>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="main-container">
+
+            <!-- NAVEGACIÓN PRINCIPAL -->
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="configuration.html" class="nav-link">
+                            <i class="fa-solid fa-gear"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fa-solid fa-user"></i>
                         </a>
                     </li>
                 </ul>
             </nav>
 
-            <main class="main">
-                <h2>Analytics</h2>
-                <p>Check the sales, value and bounce rate by country.</p>
-    
-                <section class="analitics">
-                    <div class="analitic-box"></div>
-                    <div class="analitic-box"></div>
-                    <div class="analitic-box"></div>
+            <!-- SUB-CONTENIDO PRINCIPAL -->
+            <div class="main">
+
+                <!-- DESCRIPCIÓN -->
+                <div class=main-description>
+
+                    <!-- TÍTULO Y SUBTITULO-->
+                    <div>
+                        <h2>Analytics</h2>
+                        <p>Check the sales, value and bounce rate by country.</p>
+                    </div>
+
+                </div>
+
+                <!-- CONTENIDO -->
+                <section class="main-content">
+
+
+                    <section class="analitics">
+                        <div class="analitic-box"></div>
+                        <div class="analitic-box"></div>
+                        <div class="analitic-box"></div>
+                    </section>
+
+                    <section class="analitics-data">
+                        <div class="analitic-box-data"></div>
+                        <div class="analitic-box-data"></div>
+                        <div class="analitic-box-data"></div>
+                        <div class="analitic-box-data"></div>
+                    </section>
+
+                    <section class="analitics-img">
+                        <div class="analitic-box-img"></div>
+                        <div class="analitic-box-img"></div>
+                        <div class="analitic-box-img"></div>
+                    </section>
                 </section>
-    
-                <section class="analitics-data">
-                    <div class="analitic-box-data"></div>
-                    <div class="analitic-box-data"></div>
-                    <div class="analitic-box-data"></div>
-                    <div class="analitic-box-data"></div>
-                </section>
-    
-                <section class="analitics-img">
-                    <div class="analitic-box-img"></div>
-                    <div class="analitic-box-img"></div>
-                    <div class="analitic-box-img"></div>
-                </section>
-            </main>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="../static/js/script.js"></script>
 </body>
 </html>
