@@ -4,9 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class PositionController {
-    @GetMapping("/")
-    public String cargo(){
-        return "cargo";
+public class RoleController {
+    @GetMapping("/roles")
+    public String roles(){
+        return "roles";
     }
 }
