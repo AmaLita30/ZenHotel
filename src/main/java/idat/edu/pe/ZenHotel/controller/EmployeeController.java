@@ -5,8 +5,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class EmployeeController {
+
     @GetMapping("/employee")
     public String employee(){
         return "employee";
+    }
+
+    @GetMapping("/employeeForm")
+    public String employeeForm() {
+        return ("employeeForm");
     }
 }

@@ -10,4 +10,9 @@ public class CustomerController {
     public String customer() {
         return "customer";
     }
+
+    @GetMapping("/customerForm")
+    public String customerForm() {
+        return ("customerForm");
+    }
 }

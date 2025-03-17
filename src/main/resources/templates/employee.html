@@ -26,7 +26,7 @@
             <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
 
             <!-- SUB-CONTENIDO PRINCIPAL -->
-            <div class="main">
+            <main class="main">
 
                 <!-- DESCRIPCIÓN -->
                 <div class=main-description>
@@ -38,7 +38,7 @@
                     </div>
 
                     <!-- BOTÓN NUEVO -->
-                    <a href="employeeForm.html">
+                    <a th:href="@{/employeeForm}">
                         <span>New Employee</span>
                         <i class="fa-solid fa-plus"></i>
                     </a>
@@ -286,11 +286,13 @@
                             </tr>                           
                         </tbody>
                     </table>
-                </section>
-            </div>
-        </div>
-    </div>
-        <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-        <script src="../static/js/script.js"></script>
+                </section> <!-- CLOSE CONTENIDO -->
+            </main> <!-- CLOSE SUB-CONTENIDO PRINCIPAL -->
+        </div> <!-- CLOSE CONTENIDO PRINCIPAL -->
+    </div> <!-- CLOSE CONTENEDOR -->
+
+    <!-- SCRIPTS -->
+    <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
+    <script th:src="@{/js/script.js}"></script>
 </body>
 </html>
