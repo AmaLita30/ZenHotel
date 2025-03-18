@@ -9,4 +9,9 @@ public class RoleController {
     public String roles(){
         return "roles";
     }
+
+    @GetMapping("/rolesForm")
+    public String rolesForm(){
+        return "rolesForm";
+    }
 }
