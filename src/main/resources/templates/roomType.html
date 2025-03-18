@@ -26,23 +26,22 @@
             <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
 
             <!-- SUB-CONTENIDO PRINCIPAL -->
-            <div class="main">
+            <main class="main">
 
                 <!-- DESCRIPCIÓN -->
                 <div class=main-description>
 
                     <!-- TÍTULO Y SUBTITULO-->
                     <div>
-                        <h2>Roles</h2>
-                        <p>*Role List.</p>
+                        <h2>Type</h2>
+                        <p>*Type List.</p>
                     </div>
 
                     <!-- BOTÓN NUEVO -->
-                    <a href="rolesForm.html" class="btn-plus">
-                        <span>New Role</span>
+                    <a href="roomTypeForm.html" class="btn-plus">
+                        <span>New Type</span>
                         <i class="fa-solid fa-plus"></i>
                     </a>
-
                 </div>
 
                 <!-- CONTENIDO -->
@@ -51,15 +50,15 @@
                         <thead>
                             <tr>
                                 <td>ID</td>
-                                <td>User Role</td>
+                                <td>Room Type</td>
                                 <td>Edit</td>
                                 <td>Delete</td>
                             </tr>
-                        </thead>
-                        <tbody>
+                            </thead>
+                            <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Recepcionista</td>
+                                <td>Single</td>
                                 <td>
                                     <a href="#" class="edit">
                                         <i class="fa-solid fa-pen-to-square"></i>
@@ -73,7 +72,7 @@
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Gerente</td>
+                                <td>Double</td>
                                 <td>
                                     <a href="#" class="edit">
                                         <i class="fa-solid fa-pen-to-square"></i>
@@ -87,7 +86,7 @@
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Camarero</td>
+                                <td>Twin</td>
                                 <td>
                                     <a href="#" class="edit">
                                         <i class="fa-solid fa-pen-to-square"></i>
@@ -101,7 +100,7 @@
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>Supervisor de limpieza</td>
+                                <td>Queen</td>
                                 <td>
                                     <a href="#" class="edit">
                                         <i class="fa-solid fa-pen-to-square"></i>
@@ -115,7 +114,7 @@
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>Conserje</td>
+                                <td>King</td>
                                 <td>
                                     <a href="#" class="edit">
                                         <i class="fa-solid fa-pen-to-square"></i>
@@ -126,15 +125,30 @@
                                         <i class="fa-solid fa-trash"></i>
                                     </a>
                                 </td>
-                            </tr>      
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Suite</td>
+                                <td>
+                                    <a href="#" class="edit">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" class="delete">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                </section>
-            </div>
-        </div>
-    </div>
+                </section> <!-- CLOSE CONTENIDO -->
+            </main> <!-- CLOSE SUB-CONTENIDO PRINCIPAL -->
+        </div> <!-- CLOSE CONTENIDO PRINCIPAL -->
+    </div> <!-- CLOSE CONTENEDOR -->
 
+    <!-- SCRIPTS -->
     <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-    <script th:src="@{/js/script.js}"></script>
+    <script src="../static/js/script.js"></script>
 </body>
 </html>

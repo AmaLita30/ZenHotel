@@ -24,13 +24,18 @@
                     <span>Customer</span>
                 </a>
             </li>
-            <li>
-                <a class="nav-btn" th:href="@{/room}">
+            <li class="has-submenu">
+                <a class="nav-btn" th:href="@{/room}" >
                     <div class="icon">
                         <i class="fa-solid fa-bed"></i>
                     </div>
                     <span>Room</span>
                 </a>
+                <ul class="submenu">
+                    <li><a th:href="@{/room}">Room List</a></li>
+                    <li><a th:href="@{/roomType}">Room Type</a></li>
+                    <li><a th:href="@{/roomStatus}" class="ultimo">Room Status</a></li>
+                </ul>
             </li>
             <li class="has-submenu">
                 <a class="nav-btn" th:href="@{/reception}" >
@@ -40,11 +45,12 @@
                     <span>Reception</span>
                 </a>
                 <ul class="submenu">
-                    <li><a href="reception.html">Reception</a></li>
-                    <li><a href="reservationMain.html">Reservation</a></li>
-                    <li><a href="reservation.html" class="ultimo">Reservation list</a></li>
+                    <li><a href="#">Reception</a></li>
+                    <li><a href="#">Reservation</a></li>
+                    <li><a href="#" class="ultimo">Reservation list</a></li>
                 </ul>
             </li>
+
             <li>
                 <a class="nav-btn" th:href="@{/invoice}">
                     <div class="icon">

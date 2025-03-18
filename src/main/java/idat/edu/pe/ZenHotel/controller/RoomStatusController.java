@@ -4,15 +4,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class StatusController {
+public class RoomStatusController {
 
-    @GetMapping("/status")
+    @GetMapping("/roomStatus")
     public String status(){
-        return "status";
+        return "roomStatus";
     }
 
-    @GetMapping("/statusForm")
+    @GetMapping("/roomStatusForm")
     public String statusForm(){
-        return "statusForm";
+        return "roomStatusForm";
     }
 }

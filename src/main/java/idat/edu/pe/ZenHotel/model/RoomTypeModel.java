@@ -1,10 +1,10 @@
 package idat.edu.pe.ZenHotel.model;
 
-public class TypeModel {
+public class RoomTypeModel {
     private Integer idType;
     private String type;
 
-    public TypeModel(Integer idType, String type) {
+    public RoomTypeModel(Integer idType, String type) {
         this.idType = idType;
         this.type = type;
     }

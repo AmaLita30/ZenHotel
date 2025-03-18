@@ -1,10 +1,10 @@
 package idat.edu.pe.ZenHotel.model;
 
-public class StatusModel {
+public class RoomStatusModel {
     private Integer idStatus;
     private String status;
 
-    public StatusModel(Integer idStatus, String status) {
+    public RoomStatusModel(Integer idStatus, String status) {
         this.idStatus = idStatus;
         this.status = status;
     }

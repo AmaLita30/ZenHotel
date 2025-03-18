@@ -4,15 +4,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class TypeController {
+public class RoomTypeController {
 
-    @GetMapping("/type")
+    @GetMapping("/roomType")
     public String type(){
-        return "type";
+        return "roomType";
     }
 
-    @GetMapping("/typeForm")
+    @GetMapping("/roomTypeForm")
     public String typeForm(){
-        return "typeForm";
+        return "roomTypeForm";
     }
 }
