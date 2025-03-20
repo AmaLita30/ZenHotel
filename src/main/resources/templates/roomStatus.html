@@ -13,14 +13,14 @@
 <!-- CONTENEDOR -->
 <div class="container">
 
-  <!-- MENU LATERAL -->
-  <aside th:replace="fragments/sidebar :: sidebar"></aside>
+    <!-- MENU LATERAL -->
+    <aside th:replace="fragments/sidebar :: sidebar"></aside>
 
-  <!-- SIDEBAR NULL -->
-  <div class="sidebar-null"></div>
+    <!-- SIDEBAR NULL -->
+    <div class="sidebar-null"></div>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <div class="main-container">
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main-container">
 
     <!-- NAVEGACIÓN PRINCIPAL -->
     <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
@@ -28,28 +28,28 @@
     <!-- SUB-CONTENIDO PRINCIPAL -->
     <div class="main">
 
-      <!-- DESCRIPCIÓN -->
-      <div class=main-description>
+        <!-- DESCRIPCIÓN -->
+        <div class=main-description>
 
         <!-- TÍTULO Y SUBTITULO-->
         <div>
-          <h2>Status</h2>
-          <p>*Status List.</p>
+            <h2>Room Status</h2>
+            <p>*List of Room Statues.</p>
         </div>
 
         <!-- BOTÓN NUEVO -->
-        <a href="roomStatusForm.html" class="btn-plus">
-          <span>New Status</span>
-          <i class="fa-solid fa-plus"></i>
+        <a th:href="@{/roomStatusForm}" class="btn-plus">
+            <span>New Status</span>
+            <i class="fa-solid fa-plus"></i>
         </a>
 
       </div>
 
       <!-- CONTENIDO -->
-      <section class="main-content">
-        <table class="table-50">
-          <thead>
-          <tr>
+        <section class="main-content">
+          <table class="table-50">
+            <thead>
+            <tr>
             <td>ID</td>
             <td>Room Status</td>
             <td>Edit</td>
@@ -134,6 +134,6 @@
   </div>
 </div>
 <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-<script src="../static/js/script.js"></script>
+<script th:src="@{/js/script.js}"></script>
 </body>
 </html>

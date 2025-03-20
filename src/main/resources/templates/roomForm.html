@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,98 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <!-- CONTENEDOR -->
     <div class="container">
 
         <!-- MENU LATERAL -->
-        <aside class="sidebar">
+        <aside th:replace="fragments/sidebar :: sidebar"></aside>
 
-            <!-- TÍTULO -->
-            <h1 class="sidebar-title">
-                <a href="home.html">
-                    <i class="fa-solid fa-hotel"></i>
-                </a>
-            </h1>
-
-            <!-- PERFIL USUARIO -->
-            <a href="#" class="sidebar-user">Joel Fernandez</a>
-
-            <!-- MENU DE NAVEGACIÓN -->
-            <nav>
-                <ul>
-                    <li>
-                        <a class="nav-btn" href="customer.html">
-                            <div class="icon">
-                                <i class="fa-sharp fa-solid fa-user"></i>
-                            </div>
-                            <span>Customer</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="room.html">
-                            <div class="icon">
-                                <i class="fa-solid fa-bed"></i>
-                            </div>
-                            <span>Room</span>
-                        </a>
-                    </li>
-                    <li class="has-submenu">
-                        <a class="nav-btn" href="recepcion.html">
-                            <div class="icon">
-                                <i class="fa-solid fa-phone-flip"></i>
-                            </div>
-                            <span>Reception</span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="reception.html">Reception</a></li>
-                            <li><a href="reservationMain.html">Reservation</a></li>
-                            <li><a href="reservation.html" class="ultimo">Reservation list</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="">
-                            <div class="icon">
-                                <i class="fa-solid fa-file-invoice-dollar"></i>
-                            </div>
-                            <span>Invoice</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="">
-                            <div class="icon">
-                                <i class="fa-solid fa-bell-concierge"></i>
-                            </div>
-                            <span>Extra Service</span></a>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="employee.html">
-                            <div class="icon">
-                                <i class="fa-solid fa-users"></i>
-                            </div>
-                            <span>Employees</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="roles.html">
-                            <div class="icon">
-                                <i class="fa-solid fa-ranking-star"></i>
-                            </div>
-                            <span>Roles</span></a>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="">
-                            <div class="icon">
-                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            </div>
-                            <span>Sign Out</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
         <!-- SIDEBAR NULL -->
         <div class="sidebar-null"></div>
 
@@ -106,73 +23,62 @@
         <div class="main-container">
 
             <!-- NAVEGACIÓN PRINCIPAL -->
-            <nav class="navbar">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="configuracion.html" class="nav-link">
-                            <i class="fa-solid fa-gear"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
 
             <!-- SUB-CONTENIDO PRINCIPAL -->
-            <div class="main">
+            <main class="main">
 
                 <!-- DESCRIPCIÓN -->
                 <div class=main-description>
 
                     <!-- TÍTULO Y SUBTITULO-->
                     <div>
-                        <h2>Rooms</h2>
-                        <p>*Registro total de habitaciones.</p>
+                        <h2>Room</h2>
+                        <p>*Register / Update Room.</p>
                     </div>
-                    
+
                 </div>
 
                 <!-- CONTENIDO -->
                 <section class="main-content">
-                    <form action="">
+                    <form action="" method="post">
                         <div class="register">
                             <label for="id">ID</label>
                             <input type="text" disabled value="13" name="id" id="id">
-                            <label for="">N.º HABITACIÓN	</label>
+                            <label for="">N.º ROOM	</label>
                             <input type="number" placeholder="0">
-                            <label for="">TIPO</label>
-                            <select name="">
-                                <option value="" selected disabled>-- Seleccionar --</option>
+                            <label for="">TYPE</label>
+                            <select>
+                                <option value="" selected disabled>-- Select --</option>
                                 <option value="">Simple</option>
                                 <option value="">Doble</option>
                                 <option value="">Triple</option>
                                 <option value="">Suite</option>
                             </select>
-                            <label for="">ESTADO</label>
+                            <label for="">STATUS</label>
                             <select name="" id="">
-                                <option value="" selected disabled>-- Seleccionar --</option>
+                                <option value="" selected disabled>-- Select --</option>
                                 <option value="">Disponible</option>
                                 <option value="">Ocupada</option>
                                 <option value="">Reservada</option>
                                 <option value="">Mantenimiento</option>
                             </select>
-                            <label for="">PRECIO</label>
-                            <input type="number" placeholder="0">
-                            <label for="">DESCRIPCIÓN</label>
-                            <input type="text">
+                            <label for="price">PRICE</label>
+                            <input type="number" placeholder="0" id="price">
+                            <label for="description">DESCRIPTION</label>
+                            <input type="text" id="description">
     
-                            <button type="submit" class="btn-registrar">Guardar</button>
-                            <button type="button" onclick="history.back()" class="btn-cancelar">Cancelar</button>
+                            <button type="submit" class="btn-registrar">Save</button>
+                            <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
                         </div>
                     </form>
-                </section>
-            </div>
-        </div>
-    </div>
+                </section> <!-- CLOSE CONTENIDO -->
+            </main> <!-- CLOSE SUB-CONTENIDO PRINCIPAL -->
+        </div> <!-- CLOSE CONTENIDO PRINCIPAL -->
+    </div> <!-- CLOSE CONTENEDOR -->
+
+    <!-- SCRIPTS -->
     <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-    <script src="../static/js/script.js"></script>
+    <script th:src="@{/js/script.js}"></script>
 </body>
 </html>

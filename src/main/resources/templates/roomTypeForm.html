@@ -10,60 +10,60 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<!-- CONTENEDOR -->
-<div class="container">
+    <!-- CONTENEDOR -->
+    <div class="container">
 
-    <!-- MENU LATERAL -->
-    <aside th:replace="fragments/sidebar :: sidebar"></aside>
+        <!-- MENU LATERAL -->
+        <aside th:replace="fragments/sidebar :: sidebar"></aside>
 
-    <!-- SIDEBAR NULL -->
-    <div class="sidebar-null"></div>
+        <!-- SIDEBAR NULL -->
+        <div class="sidebar-null"></div>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <div class="main-container">
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="main-container">
 
-        <!-- NAVEGACIÓN PRINCIPAL -->
-        <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
+            <!-- NAVEGACIÓN PRINCIPAL -->
+            <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
 
-        <!-- SUB-CONTENIDO PRINCIPAL -->
-        <main class="main">
+            <!-- SUB-CONTENIDO PRINCIPAL -->
+            <main class="main">
 
-            <!-- DESCRIPCIÓN -->
-            <div class=main-description>
+                <!-- DESCRIPCIÓN -->
+                <div class=main-description>
 
-                <!-- TÍTULO Y SUBTITULO-->
-                <div>
-                    <h2>Room Type</h2>
-                    <p>*Update Room Type.</p>
+                    <!-- TÍTULO Y SUBTITULO-->
+                    <div>
+                        <h2>Room</h2>
+                        <p>*Update Room Type.</p>
+                    </div>
+
                 </div>
 
-            </div>
+                <!-- CONTENIDO -->
+                <section class="main-content">
+                    <form action="" method="post">
+                        <div class="register">
+                            <label for="id">ID</label>
+                            <input type="text" disabled value="3" name="id" id="id">
 
-            <!-- CONTENIDO -->
-            <section class="main-content">
-                <form action="" method="post">
-                    <div class="register">
-                        <label for="id">ID</label>
-                        <input type="text" disabled value="3" name="id" id="id">
+                            <label for="type">ROOM TYPE</label>
+                            <select name="type" id="type">
+                                <option value="single">SINGLE</option>
+                                <option value="double">DOUBLE</option>
+                                <option value="twin">TWIN</option>
+                                <option value="queen">QUEEN</option>
+                                <option value="king">KING</option>
+                                <option value="suite">SUITE</option>
+                            </select>
+                        </div>
+                    </form>
+                </section> <!-- CLOSE CONTENIDO -->
+            </main> <!-- CLOSE SUB-CONTENIDO PRINCIPAL -->
+        </div> <!-- CLOSE CONTENIDO PRINCIPAL -->
+    </div> <!-- CLOSE CONTENEDOR -->
 
-                        <label for="type">ROOM TYPE</label>
-                        <select name="type" id="type">
-                            <option value="single">SINGLE</option>
-                            <option value="double">DOUBLE</option>
-                            <option value="twin">TWIN</option>
-                            <option value="queen">QUEEN</option>
-                            <option value="king">KING</option>
-                            <option value="suite">SUITE</option>
-                        </select>
-                    </div>
-                </form>
-            </section> <!-- CLOSE CONTENIDO -->
-        </main> <!-- CLOSE SUB-CONTENIDO PRINCIPAL -->
-    </div> <!-- CLOSE CONTENIDO PRINCIPAL -->
-</div> <!-- CLOSE CONTENEDOR -->
-
-<!-- SCRIPTS -->
-<script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-<script th:src="@{/js/script.js}"></script>
+    <!-- SCRIPTS -->
+    <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
+    <script th:src="@{/js/script.js}"></script>
 </body>
 </html>

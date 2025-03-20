@@ -33,12 +33,12 @@
 
                     <!-- TÍTULO Y SUBTITULO-->
                     <div>
-                        <h2>Type</h2>
-                        <p>*Type List.</p>
+                        <h2>Room</h2>
+                        <p>*List of Room Types.</p>
                     </div>
 
                     <!-- BOTÓN NUEVO -->
-                    <a href="roomTypeForm.html" class="btn-plus">
+                    <a th:href="@{/roomTypeForm}" class="btn-plus">
                         <span>New Type</span>
                         <i class="fa-solid fa-plus"></i>
                     </a>
@@ -149,6 +149,6 @@
 
     <!-- SCRIPTS -->
     <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-    <script src="../static/js/script.js"></script>
+    <script th:src="@{/js/script.js}"></script>
 </body>
 </html>

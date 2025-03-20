@@ -9,4 +9,9 @@ public class RoomController {
     public String room(){
         return "room";
     }
+
+    @GetMapping("/roomForm")
+    public String roomForm(){
+        return "roomForm";
+    }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,98 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <!-- CONTENEDOR -->
     <div class="container">
 
         <!-- MENU LATERAL -->
-        <aside class="sidebar">
+        <aside th:replace="fragments/sidebar :: sidebar"></aside>
 
-            <!-- TÍTULO -->
-            <h1 class="sidebar-title">
-                <a href="home.html">
-                    <i class="fa-solid fa-hotel"></i>
-                </a>
-            </h1>
-
-            <!-- PERFIL USUARIO -->
-            <a href="#" class="sidebar-user">Joel Fernandez</a>
-
-            <!-- MENU DE NAVEGACIÓN -->
-            <nav>
-                <ul>
-                    <li>
-                        <a class="nav-btn" href="huesped.html">
-                            <div class="icon">
-                                <i class="fa-sharp fa-solid fa-user"></i>
-                            </div>
-                            <span>Huésped</span>
-                        </a>
-                    </li>
-                    <li class="has-submenu">
-                        <a class="nav-btn" href="recepcion.html">
-                            <div class="icon">
-                                <i class="fa-solid fa-bed"></i>
-                            </div>
-                            <span>Room</span>
-                        </a>
-                        <ul class="submenu">
-                            <li><a href="recepcion.html">Reception</a></li>
-                            <li><a href="habitacion.html">Room List</a></li>
-                            <li><a href="formulario_habitacion.html" class="ultimo">New Room</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="#">
-                            <div class="icon">
-                                <i class="fa-solid fa-file-invoice-dollar"></i>
-                            </div>
-                            <span>Facturación</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="reserva.html">
-                            <div class="icon">
-                                <i class="fa-solid fa-file-pen"></i>
-                            </div>
-                            <span>Reserva</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="">
-                            <div class="icon">
-                                <i class="fa-solid fa-bell-concierge"></i>
-                            </div>
-                            <span>Servicio Extra</span></a>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="">
-                            <div class="icon">
-                                <i class="fa-solid fa-users"></i>
-                            </div>
-                            <span>Empleado</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="roles.html">
-                            <div class="icon">
-                                <i class="fa-solid fa-ranking-star"></i>
-                            </div>
-                            <span>Cargo</span></a>
-                    </li>
-                    <li>
-                        <a class="nav-btn" href="">
-                            <div class="icon">
-                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            </div>
-                            <span>Sign Out</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
         <!-- SIDEBAR NULL -->
         <div class="sidebar-null"></div>
 
@@ -106,33 +23,19 @@
         <div class="main-container">
 
             <!-- NAVEGACIÓN PRINCIPAL -->
-            <nav class="navbar">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="configuracion.html" class="nav-link">
-                            <i class="fa-solid fa-gear"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
 
             <!-- SUB-CONTENIDO PRINCIPAL -->
-            <div class="main">
+            <main class="main">
 
                 <!-- DESCRIPCIÓN -->
                 <div class=main-description>
 
                     <!-- TÍTULO Y SUBTITULO-->
                     <div>
-                        <h2>Habitaciones</h2>
-                        <p>*Registro total de habitaciones.</p>
+                        <h2>Reception</h2>
+                        <p>*Room Availability.</p>
                     </div>
-
                 </div>
 
                 <!-- CONTENIDO -->
@@ -144,7 +47,7 @@
                                     <h3>Nro: 101</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>DISPONIBLE</span>
@@ -156,7 +59,7 @@
                                     <h3>Nro: 102</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>DISPONIBLE</span>
@@ -168,7 +71,7 @@
                                     <h3>Nro: 103</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>OCUPADO</span>
@@ -180,7 +83,7 @@
                                     <h3>Nro: 104</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>DISPONIBLE</span>
@@ -192,7 +95,7 @@
                                     <h3>Nro: 105</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>RESERVADO</span>
@@ -204,7 +107,7 @@
                                     <h3>Nro: 106</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>DISPONIBLE</span>
@@ -216,7 +119,7 @@
                                     <h3>Nro: 107</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>DISPONIBLE</span>
@@ -228,7 +131,7 @@
                                     <h3>Nro: 108</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>DISPONIBLE</span>
@@ -240,7 +143,7 @@
                                     <h3>Nro: 109</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>RESERVADO</span>
@@ -252,7 +155,7 @@
                                     <h3>Nro: 110</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>DISPONIBLE</span>
@@ -264,7 +167,7 @@
                                     <h3>Nro:111</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>DISPONIBLE</span>
@@ -276,18 +179,20 @@
                                     <h3>Nro:112</h3>
                                     <p>Habitación Individual</p>
                                 </div>
-                                <img src="../static/img/avatar.png" alt="" width="50px" height="50px">
+                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
                             </div>
                             <div class="disponibilidad">
                                 <span>DISPONIBLE</span>
                             </div>
                         </a>
                     </div>
-                </section>
-            </div>
-        </div>
-    </div>
+                </section> <!-- CLOSE CONTENIDO -->
+            </main> <!-- CLOSE SUB-CONTENIDO PRINCIPAL -->
+        </div> <!-- CLOSE CONTENIDO PRINCIPAL -->
+    </div> <!-- CLOSE CONTENEDOR -->
+
+    <!-- SCRIPTS -->
     <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-    <script src="../static/js/script.js"></script>
+    <script th:src="@{/js/script.js}"></script>
 </body>
 </html>
