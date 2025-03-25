@@ -1,84 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="fragments/base :: head">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZenHotel</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <!-- CONTENEDOR -->
-    <div class="container">
-
-        <!-- MENU LATERAL -->
-        <aside th:replace="fragments/sidebar :: sidebar"></aside>
-
-        <!-- SIDEBAR NULL -->
-        <div class="sidebar-null"></div>
-
-        <!-- CONTENIDO PRINCIPAL -->
-        <div class="main-container">
-
-            <!-- NAVEGACIÓN PRINCIPAL -->
-            <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
-
-            <!-- SUB-CONTENIDO PRINCIPAL -->
-            <main class="main">
-
-                <!-- DESCRIPCIÓN -->
-                <div class=main-description>
-
-                    <!-- TÍTULO Y SUBTITULO-->
-                    <div>
-                        <h2>Room</h2>
-                        <p>*Register / Update Room.</p>
-                    </div>
-
+    <div th:replace="fragments/base :: base">
+        <main class="main" th:fragment="content">
+            <!-- DESCRIPCIÓN -->
+            <div class=main-description>
+                <div>
+                    <h2>Room</h2>
+                    <p>*Register / Update Room.</p>
                 </div>
+            </div>
+            <!-- CONTENIDO -->
+            <section class="main-content">
+                <form action="" method="post">
+                    <div class="register">
+                        <label for="id">ID</label>
+                        <input type="text" disabled value="13" name="id" id="id">
 
-                <!-- CONTENIDO -->
-                <section class="main-content">
-                    <form action="" method="post">
-                        <div class="register">
-                            <label for="id">ID</label>
-                            <input type="text" disabled value="13" name="id" id="id">
-                            <label for="">N.º ROOM	</label>
-                            <input type="number" placeholder="0">
-                            <label for="">TYPE</label>
-                            <select>
-                                <option value="" selected disabled>-- Select --</option>
-                                <option value="">Simple</option>
-                                <option value="">Doble</option>
-                                <option value="">Triple</option>
-                                <option value="">Suite</option>
-                            </select>
-                            <label for="">STATUS</label>
-                            <select name="" id="">
-                                <option value="" selected disabled>-- Select --</option>
-                                <option value="">Disponible</option>
-                                <option value="">Ocupada</option>
-                                <option value="">Reservada</option>
-                                <option value="">Mantenimiento</option>
-                            </select>
-                            <label for="price">PRICE</label>
-                            <input type="number" placeholder="0" id="price">
-                            <label for="description">DESCRIPTION</label>
-                            <input type="text" id="description">
-    
-                            <button type="submit" class="btn-registrar">Save</button>
-                            <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
-                        </div>
-                    </form>
-                </section> <!-- CLOSE CONTENIDO -->
-            </main> <!-- CLOSE SUB-CONTENIDO PRINCIPAL -->
-        </div> <!-- CLOSE CONTENIDO PRINCIPAL -->
-    </div> <!-- CLOSE CONTENEDOR -->
+                        <label for="numroom">N.º ROOM	</label>
+                        <input type="number" placeholder="0" id="numroom">
 
-    <!-- SCRIPTS -->
-    <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-    <script th:src="@{/js/script.js}"></script>
+                        <label for="type">TYPE</label>
+                        <select id="type">
+                            <option value="" selected disabled>-- Select --</option>
+                            <option value="simple">Simple</option>
+                            <option value="">Doble</option>
+                            <option value="">Triple</option>
+                            <option value="">Suite</option>
+                        </select>
+
+                        <label for="">STATUS</label>
+                        <select name="" id="">
+                            <option value="" selected disabled>-- Select --</option>
+                            <option value="">Disponible</option>
+                            <option value="">Ocupada</option>
+                            <option value="">Reservada</option>
+                            <option value="">Mantenimiento</option>
+                        </select>
+
+                        <label for="price">PRICE</label>
+                        <input type="number" placeholder="0" id="price">
+
+                        <label for="description">DESCRIPTION</label>
+                        <input type="text" id="description">
+
+                        <button type="submit" class="btn-registrar">Save</button>
+                        <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

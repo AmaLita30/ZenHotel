@@ -1,298 +1,267 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="fragments/base :: head">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZenHotel</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <!-- CONTENEDOR -->
-    <div class="container">
-
-        <!-- MENU LATERAL -->
-        <aside th:replace="fragments/sidebar :: sidebar"></aside>
-
-        <!-- SIDEBAR NULL -->
-        <div class="sidebar-null"></div>
-
-        <!-- CONTENIDO PRINCIPAL -->
-        <div class="main-container">
-
-            <!-- NAVEGACIÓN PRINCIPAL -->
-            <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
-
-            <!-- SUB-CONTENIDO PRINCIPAL -->
-            <main class="main">
-
-                <!-- DESCRIPCIÓN -->
-                <div class=main-description>
-
-                    <!-- TÍTULO Y SUBTITULO-->
-                    <div>
-                        <h2>Employee</h2>
-                        <p>*Total Employee Registry.</p>
-                    </div>
-
-                    <!-- BOTÓN NUEVO -->
-                    <a th:href="@{/employeeForm}">
-                        <span>New Employee</span>
-                        <i class="fa-solid fa-plus"></i>
-                    </a>
+    <div th:replace="fragments/base :: base">
+        <main class="main" th:fragment="content">
+            <!-- DESCRIPCIÓN -->
+            <div class=main-description>
+                <div>
+                    <h2>Employee</h2>
+                    <p>*Total Employee Registry.</p>
                 </div>
-
-                <!-- CONTENIDO -->
-                <section class="main-content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>ID</td>
-                                <td>User Code</td>
-                                <td>Father's L.</td>
-                                <td>Mother's L.</td>
-                                <td>First N.</td>
-                                <td>Middle N.</td>
-                                <td>DNI</td>
-                                <td>Phone</td>
-                                <td>E-mail</td>
-                                <td>Role</td>
-                                <td>Edit</td>
-                                <td>Delete</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>FER72463299</td>
-                                <td>Fernandez</td>
-                                <td>Pancorvo</td>
-                                <td>Joel</td>
-                                <td>Anderson</td>
-                                <td>72463299</td>
-                                <td>969480248</td>
-                                <td>fernandezpancorvo@gmail.com</td>
-                                <td>Recepcionista</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>GON12345678</td>
-                                <td>González</td>
-                                <td>López</td>
-                                <td>Ana</td>
-                                <td>María</td>
-                                <td>12345678</td>
-                                <td>912345678</td>
-                                <td>ana.gonzalez@email.com</td>
-                                <td>Recepcionista</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>ROD98765432</td>
-                                <td>Rodríguez</td>
-                                <td>Martínez</td>
-                                <td>Luis</td>
-                                <td>Alberto</td>
-                                <td>98765432</td>
-                                <td>987654321</td>
-                                <td>luis.rodriguez@email.com</td>
-                                <td>Recepcionista</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>SAN56789012</td>
-                                <td>Sánchez</td>
-                                <td>García</td>
-                                <td>Sofía</td>
-                                <td>Isabel</td>
-                                <td>56789012</td>
-                                <td>923456789</td>
-                                <td>sofia.sanchez@email.com</td>
-                                <td>Recepcionista</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>TOR23456789</td>
-                                <td>Torres</td>
-                                <td>Pérez</td>
-                                <td>Carlos</td>
-                                <td>Andrés</td>
-                                <td>23456789</td>
-                                <td>934567890</td>
-                                <td>carlos.torres@email.com</td>
-                                <td>Recepcionista</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>RAM89012345</td>
-                                <td>Ramírez</td>
-                                <td>Díaz</td>
-                                <td>Laura</td>
-                                <td>Elena</td>
-                                <td>89012345</td>
-                                <td>945678901</td>
-                                <td>laura.ramirez@email.com</td>
-                                <td>Recepcionista</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>HER45678901</td>
-                                <td>Hernández</td>
-                                <td>Ruiz</td>
-                                <td>David</td>
-                                <td>Fernando</td>
-                                <td>45678901</td>
-                                <td>956789012</td>
-                                <td>david.hernandez@email.com</td>
-                                <td>Recepcionista</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>GUT78901234</td>
-                                <td>Gutiérrez</td>
-                                <td>Soto</td>
-                                <td>Patricia</td>
-                                <td>Carmen</td>
-                                <td>78901234</td>
-                                <td>967890123</td>
-                                <td>patricia.gutierrez@email.com</td>
-                                <td>Recepcionista</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>PER01234567</td>
-                                <td>Pérez</td>
-                                <td>Navarro</td>
-                                <td>Ricardo</td>
-                                <td>Daniel</td>
-                                <td>01234567</td>
-                                <td>978901234</td>
-                                <td>ricardo.perez@email.com</td>
-                                <td>Recepcionista</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>DIA34567890</td>
-                                <td>Díaz</td>
-                                <td>Romero</td>
-                                <td>Mónica</td>
-                                <td>Verónica</td>
-                                <td>34567890</td>
-                                <td>989012345</td>
-                                <td>monica.diaz@email.com</td>
-                                <td>Recepcionista</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>                           
-                        </tbody>
-                    </table>
-                </section> <!-- CLOSE CONTENIDO -->
-            </main> <!-- CLOSE SUB-CONTENIDO PRINCIPAL -->
-        </div> <!-- CLOSE CONTENIDO PRINCIPAL -->
-    </div> <!-- CLOSE CONTENEDOR -->
-
-    <!-- SCRIPTS -->
-    <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-    <script th:src="@{/js/script.js}"></script>
+                <a th:href="@{/employeeForm}">
+                    <span>New Employee</span>
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+            </div>
+            <!-- CONTENIDO -->
+            <section class="main-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>User Code</td>
+                            <td>Father's Last</td>
+                            <td>Mother's Last</td>
+                            <td>First Name</td>
+                            <td>Middle Name</td>
+                            <td>DNI</td>
+                            <td>Phone</td>
+                            <td>E-mail</td>
+                            <td>Role</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>FER72463299</td>
+                            <td>Fernandez</td>
+                            <td>Pancorvo</td>
+                            <td>Joel</td>
+                            <td>Anderson</td>
+                            <td>72463299</td>
+                            <td>969480248</td>
+                            <td>fernandezpancorvo@gmail.com</td>
+                            <td>Recepcionista</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>GON12345678</td>
+                            <td>González</td>
+                            <td>López</td>
+                            <td>Ana</td>
+                            <td>María</td>
+                            <td>12345678</td>
+                            <td>912345678</td>
+                            <td>ana.gonzalez@email.com</td>
+                            <td>Recepcionista</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>ROD98765432</td>
+                            <td>Rodríguez</td>
+                            <td>Martínez</td>
+                            <td>Luis</td>
+                            <td>Alberto</td>
+                            <td>98765432</td>
+                            <td>987654321</td>
+                            <td>luis.rodriguez@email.com</td>
+                            <td>Recepcionista</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>SAN56789012</td>
+                            <td>Sánchez</td>
+                            <td>García</td>
+                            <td>Sofía</td>
+                            <td>Isabel</td>
+                            <td>56789012</td>
+                            <td>923456789</td>
+                            <td>sofia.sanchez@email.com</td>
+                            <td>Recepcionista</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>TOR23456789</td>
+                            <td>Torres</td>
+                            <td>Pérez</td>
+                            <td>Carlos</td>
+                            <td>Andrés</td>
+                            <td>23456789</td>
+                            <td>934567890</td>
+                            <td>carlos.torres@email.com</td>
+                            <td>Recepcionista</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>RAM89012345</td>
+                            <td>Ramírez</td>
+                            <td>Díaz</td>
+                            <td>Laura</td>
+                            <td>Elena</td>
+                            <td>89012345</td>
+                            <td>945678901</td>
+                            <td>laura.ramirez@email.com</td>
+                            <td>Recepcionista</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>HER45678901</td>
+                            <td>Hernández</td>
+                            <td>Ruiz</td>
+                            <td>David</td>
+                            <td>Fernando</td>
+                            <td>45678901</td>
+                            <td>956789012</td>
+                            <td>david.hernandez@email.com</td>
+                            <td>Recepcionista</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>GUT78901234</td>
+                            <td>Gutiérrez</td>
+                            <td>Soto</td>
+                            <td>Patricia</td>
+                            <td>Carmen</td>
+                            <td>78901234</td>
+                            <td>967890123</td>
+                            <td>patricia.gutierrez@email.com</td>
+                            <td>Recepcionista</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>PER01234567</td>
+                            <td>Pérez</td>
+                            <td>Navarro</td>
+                            <td>Ricardo</td>
+                            <td>Daniel</td>
+                            <td>01234567</td>
+                            <td>978901234</td>
+                            <td>ricardo.perez@email.com</td>
+                            <td>Recepcionista</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>DIA34567890</td>
+                            <td>Díaz</td>
+                            <td>Romero</td>
+                            <td>Mónica</td>
+                            <td>Verónica</td>
+                            <td>34567890</td>
+                            <td>989012345</td>
+                            <td>monica.diaz@email.com</td>
+                            <td>Recepcionista</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- HEAD (FRAGMENTO) -->
 <head th:fragment="head">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,4 +11,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- SCRIPTS -->
+    <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous" defer></script>
+    <script th:src="@{/js/script.js}" defer></script>
 </head>
+<body>
+    <!-- CONTENEDOR (FRAGMENTO BASE) -->
+    <div class="container" th:fragment="base">
+        <aside th:replace="fragments/sidebar :: sidebar"></aside>
+        <div class="sidebar-null"></div>
+        <div class="main-container">
+            <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
+            <!-- SECCIÓN DINÁMICA -->
+            <main th:replace="~{::content}"></main >
+        </div>
+    </div>
+</body>
+</html>

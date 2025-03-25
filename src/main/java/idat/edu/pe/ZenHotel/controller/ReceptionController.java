@@ -10,4 +10,9 @@ public class ReceptionController {
     public String reception(){
         return "reception";
     }
+
+    @GetMapping("/registerRoomReservation")
+    public String registerRoomReservation(){
+        return "registerRoomReservation";
+    }
 }

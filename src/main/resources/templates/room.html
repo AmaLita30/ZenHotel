@@ -1,290 +1,259 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="fragments/base :: head">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZenHotel</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <!-- CONTENEDOR -->
-    <div class="container">
-
-        <!-- MENU LATERAL -->
-        <aside th:replace="fragments/sidebar :: sidebar"></aside>
-
-        <!-- SIDEBAR NULL -->
-        <div class="sidebar-null"></div>
-
-        <!-- CONTENIDO PRINCIPAL -->
-        <div class="main-container">
-
-            <!-- NAVEGACIÓN PRINCIPAL -->
-            <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
-
-            <!-- SUB-CONTENIDO PRINCIPAL -->
-            <main class="main">
-
-                <!-- DESCRIPCIÓN -->
-                <div class=main-description>
-
-                    <!-- TÍTULO Y SUBTITULO-->
-                    <div>
-                        <h2>Room</h2>
-                        <p>*Total Room Registry.</p>
-                    </div>
-
-                    <!-- BOTÓN NUEVO -->
-                    <a th:href="@{/roomForm}">
-                        <span>New Room</span>
-                        <i class="fa-solid fa-plus"></i>
-                    </a>
+    <div th:replace="fragments/base :: base">
+        <main class="main" th:fragment="content">
+            <!-- DESCRIPCIÓN -->
+            <div class=main-description>
+                <div>
+                    <h2>Room</h2>
+                    <p>*Total Room Registry.</p>
                 </div>
-
-                <!-- CONTENIDO -->
-                <section class="main-content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>ID</td>
-                                <td>N.º Room</td>
-                                <td>Type</td>
-                                <td>Status</td>
-                                <td>Price</td>
-                                <td>Description</td>
-                                <td>Edit</td>
-                                <td>Delete</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>101</td>
-                                <td>Simple</td>
-                                <td>Disponible</td>
-                                <td>$50</td>
-                                <td>Habitación sencilla con vista al jardín.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>102</td>
-                                <td>Triple</td>
-                                <td>Ocupada</td>
-                                <td>$90</td>
-                                <td>Habitación para tres personas, con balcón.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>103</td>
-                                <td>Cuádruple</td>
-                                <td>Disponible</td>
-                                <td>$120</td>
-                                <td>Ideal para familias, con dos camas dobles.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>104</td>
-                                <td>Suite</td>
-                                <td>Ocupada</td>
-                                <td>$200</td>
-                                <td>Habitación de lujo con jacuzzi y minibar.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>105</td>
-                                <td>Doble</td>
-                                <td>Disponible</td>
-                                <td>$70</td>
-                                <td>Habitación doble con cama king size.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>106</td>
-                                <td>Simple</td>
-                                <td>Mantenimiento</td>
-                                <td>$55</td>
-                                <td>Habitación en mantenimiento, no disponible.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>107</td>
-                                <td>Triple</td>
-                                <td>Disponible</td>
-                                <td>$85</td>
-                                <td>Habitación para tres personas, con baño privado.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>108</td>
-                                <td>Doble</td>
-                                <td>Ocupada</td>
-                                <td>$75</td>
-                                <td>Habitación doble, con excelente vista a la ciudad.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>109</td>
-                                <td>Suite</td>
-                                <td>Disponible</td>
-                                <td>$250</td>
-                                <td>Suite de lujo con salón independiente.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>110</td>
-                                <td>Cuádruple</td>
-                                <td>Ocupada</td>
-                                <td>$130</td>
-                                <td>Habitación grande, ideal para grupos pequeños.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td>111</td>
-                                <td>Cuádruple</td>
-                                <td>Disponible</td>
-                                <td>$120</td>
-                                <td>Ideal para familias, con dos camas dobles.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td>112</td>
-                                <td>Suite</td>
-                                <td>Ocupada</td>
-                                <td>$200</td>
-                                <td>Habitación de lujo con jacuzzi y minibar.</td>
-                                <td>
-                                    <a href="#" class="edit">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="delete">
-                                        <i class="fa-solid fa-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section> <!-- CLOSE CONTENIDO -->
-            </main> <!-- CLOSE SUB-CONTENIDO PRINCIPAL -->
-        </div> <!-- CLOSE CONTENIDO PRINCIPAL -->
-    </div> <!-- CLOSE CONTENEDOR -->
-
-    <!-- SCRIPTS -->
-    <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-    <script th:src="@{/js/script.js}"></script>
+                <a th:href="@{/roomForm}">
+                    <span>New Room</span>
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+            </div>
+            <!-- CONTENIDO -->
+            <section class="main-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>N.º Room</td>
+                            <td>Type</td>
+                            <td>Status</td>
+                            <td>Price</td>
+                            <td>Description</td>
+                            <td>Edit</td>
+                            <td>Delete</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>101</td>
+                            <td>Simple</td>
+                            <td>Disponible</td>
+                            <td>$50</td>
+                            <td>Habitación sencilla con vista al jardín.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>102</td>
+                            <td>Triple</td>
+                            <td>Ocupada</td>
+                            <td>$90</td>
+                            <td>Habitación para tres personas, con balcón.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>103</td>
+                            <td>Cuádruple</td>
+                            <td>Disponible</td>
+                            <td>$120</td>
+                            <td>Ideal para familias, con dos camas dobles.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>104</td>
+                            <td>Suite</td>
+                            <td>Ocupada</td>
+                            <td>$200</td>
+                            <td>Habitación de lujo con jacuzzi y minibar.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>105</td>
+                            <td>Doble</td>
+                            <td>Disponible</td>
+                            <td>$70</td>
+                            <td>Habitación doble con cama king size.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>106</td>
+                            <td>Simple</td>
+                            <td>Mantenimiento</td>
+                            <td>$55</td>
+                            <td>Habitación en mantenimiento, no disponible.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>107</td>
+                            <td>Triple</td>
+                            <td>Disponible</td>
+                            <td>$85</td>
+                            <td>Habitación para tres personas, con baño privado.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>108</td>
+                            <td>Doble</td>
+                            <td>Ocupada</td>
+                            <td>$75</td>
+                            <td>Habitación doble, con excelente vista a la ciudad.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>109</td>
+                            <td>Suite</td>
+                            <td>Disponible</td>
+                            <td>$250</td>
+                            <td>Suite de lujo con salón independiente.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>110</td>
+                            <td>Cuádruple</td>
+                            <td>Ocupada</td>
+                            <td>$130</td>
+                            <td>Habitación grande, ideal para grupos pequeños.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>111</td>
+                            <td>Cuádruple</td>
+                            <td>Disponible</td>
+                            <td>$120</td>
+                            <td>Ideal para familias, con dos camas dobles.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>112</td>
+                            <td>Suite</td>
+                            <td>Ocupada</td>
+                            <td>$200</td>
+                            <td>Habitación de lujo con jacuzzi y minibar.</td>
+                            <td>
+                                <a href="#" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#" class="delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

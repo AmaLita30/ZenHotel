@@ -1,71 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="fragments/base :: head">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZenHotel</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <!-- CONTENEDOR -->
-    <div class="container">
-
-        <!-- MENU LATERAL -->
-        <aside th:replace="fragments/sidebar :: sidebar"></aside>
-
-        <!-- SIDEBAR NULL -->
-        <div class="sidebar-null"></div>
-
-        <!-- CONTENIDO PRINCIPAL -->
-        <div class="main-container">
-
-            <!-- NAVEGACIÓN PRINCIPAL -->
-            <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
-
-            <!-- SUB-CONTENIDO PRINCIPAL -->
-            <main class="main">
-
-                <!-- DESCRIPCIÓN -->
-                <div class=main-description>
-
-                    <!-- TÍTULO Y SUBTITULO-->
-                    <div>
-                        <h2>Analytics</h2>
-                        <p>Check the sales, value and bounce rate by country.</p>
-                    </div>
-
+    <div th:replace="fragments/base :: base">
+        <main class="main" th:fragment="content">
+            <!-- DESCRIPCIÓN -->
+            <div class=main-description>
+                <div>
+                    <h2>Analytics</h2>
+                    <p>Check the sales, value and bounce rate by country.</p>
                 </div>
-
-                <!-- CONTENIDO -->
-                <section class="main-content">
-
-                    <section class="analitics">
-                        <div class="analitic-box"></div>
-                        <div class="analitic-box"></div>
-                        <div class="analitic-box"></div>
-                    </section>
-
-                    <section class="analitics-data">
-                        <div class="analitic-box-data">
-                            <span>Datos</span>
-                        </div>
-                        <div class="analitic-box-data"></div>
-                        <div class="analitic-box-data"></div>
-                        <div class="analitic-box-data"></div>
-                    </section>
-
-                    <section class="analitics-img">
-                        <div class="analitic-box-img"></div>
-                        <div class="analitic-box-img"></div>
-                        <div class="analitic-box-img"></div>
-                    </section>
+            </div>
+            <!-- CONTENIDO -->
+            <section class="main-content">
+                <section class="analitics">
+                    <div class="analitic-box"></div>
+                    <div class="analitic-box"></div>
+                    <div class="analitic-box"></div>
                 </section>
-        </div>
+
+                <section class="analitics-data">
+                    <div class="analitic-box-data">
+                        <span>Datos</span>
+                    </div>
+                    <div class="analitic-box-data"></div>
+                    <div class="analitic-box-data"></div>
+                    <div class="analitic-box-data"></div>
+                </section>
+
+                <section class="analitics-img">
+                    <div class="analitic-box-img"></div>
+                    <div class="analitic-box-img"></div>
+                    <div class="analitic-box-img"></div>
+                </section>
+            </section>
+        </main>
     </div>
-    <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../static/js/script.js"></script>
 </body>
 </html>

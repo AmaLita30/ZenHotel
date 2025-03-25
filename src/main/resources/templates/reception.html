@@ -1,198 +1,169 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="fragments/base :: head">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZenHotel</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <!-- CONTENEDOR -->
-    <div class="container">
-
-        <!-- MENU LATERAL -->
-        <aside th:replace="fragments/sidebar :: sidebar"></aside>
-
-        <!-- SIDEBAR NULL -->
-        <div class="sidebar-null"></div>
-
-        <!-- CONTENIDO PRINCIPAL -->
-        <div class="main-container">
-
-            <!-- NAVEGACIÓN PRINCIPAL -->
-            <nav class="navbar" th:replace="fragments/navbar :: navbar"></nav>
-
-            <!-- SUB-CONTENIDO PRINCIPAL -->
-            <main class="main">
-
-                <!-- DESCRIPCIÓN -->
-                <div class=main-description>
-
-                    <!-- TÍTULO Y SUBTITULO-->
-                    <div>
-                        <h2>Reception</h2>
-                        <p>*Room Availability.</p>
-                    </div>
+    <div th:replace="fragments/base :: base">
+        <main class="main" th:fragment="content">
+            <!-- DESCRIPCIÓN -->
+            <div class=main-description>
+                <div>
+                    <h2>Reception</h2>
+                    <p>*Room Availability.</p>
                 </div>
-
-                <!-- CONTENIDO -->
-                <section class="main-content">
-                    <div class="recepcion">
-                        <a href="reserva_registro.html">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro: 101</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+            </div>
+            <!-- CONTENIDO -->
+            <section class="main-content">
+                <div class="recepcion">
+                    <a th:href="@{/registerRoomReservation}">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro: 101</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                            <div class="disponibilidad">
-                                <span>DISPONIBLE</span>
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>DISPONIBLE</span>
+                        </div>
+                    </a>
+                    <a th:href="@{/registerRoomReservation}">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro: 102</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                        </a>
-                        <a href="">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro: 102</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>DISPONIBLE</span>
+                        </div>
+                    </a>
+                    <a th:href="@{/registerRoomReservation}" class="ocupado">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro: 103</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                            <div class="disponibilidad">
-                                <span>DISPONIBLE</span>
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>OCUPADO</span>
+                        </div>
+                    </a>
+                    <a th:href="@{/registerRoomReservation}">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro: 104</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                        </a>
-                        <a href="" class="ocupado">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro: 103</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>DISPONIBLE</span>
+                        </div>
+                    </a>
+                    <a th:href="@{/registerRoomReservation}" class="reservado">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro: 105</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                            <div class="disponibilidad">
-                                <span>OCUPADO</span>
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>RESERVADO</span>
+                        </div>
+                    </a>
+                    <a th:href="@{/registerRoomReservation}">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro: 106</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                        </a>
-                        <a href="">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro: 104</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>DISPONIBLE</span>
+                        </div>
+                    </a>
+                    <a th:href="@{/registerRoomReservation}">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro: 107</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                            <div class="disponibilidad">
-                                <span>DISPONIBLE</span>
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>DISPONIBLE</span>
+                        </div>
+                    </a>
+                    <a th:href="@{/registerRoomReservation}">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro: 108</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                        </a>
-                        <a href="" class="reservado">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro: 105</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>DISPONIBLE</span>
+                        </div>
+                    </a>
+                    <a th:href="@{/registerRoomReservation}"  class="reservado">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro: 109</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                            <div class="disponibilidad">
-                                <span>RESERVADO</span>
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>RESERVADO</span>
+                        </div>
+                    </a>
+                    <a th:href="@{/registerRoomReservation}">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro: 110</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                        </a>
-                        <a href="">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro: 106</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>DISPONIBLE</span>
+                        </div>
+                    </a>
+                    <a th:href="@{/registerRoomReservation}">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro:111</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                            <div class="disponibilidad">
-                                <span>DISPONIBLE</span>
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>DISPONIBLE</span>
+                        </div>
+                    </a>
+                    <a th:href="@{/registerRoomReservation}">
+                        <div class="btn-content">
+                            <div>
+                                <h3>Nro:112</h3>
+                                <p>Habitación Individual</p>
                             </div>
-                        </a>
-                        <a href="">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro: 107</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
-                            </div>
-                            <div class="disponibilidad">
-                                <span>DISPONIBLE</span>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro: 108</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
-                            </div>
-                            <div class="disponibilidad">
-                                <span>DISPONIBLE</span>
-                            </div>
-                        </a>
-                        <a href=""  class="reservado">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro: 109</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
-                            </div>
-                            <div class="disponibilidad">
-                                <span>RESERVADO</span>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro: 110</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
-                            </div>
-                            <div class="disponibilidad">
-                                <span>DISPONIBLE</span>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro:111</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
-                            </div>
-                            <div class="disponibilidad">
-                                <span>DISPONIBLE</span>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="btn-content">
-                                <div>
-                                    <h3>Nro:112</h3>
-                                    <p>Habitación Individual</p>
-                                </div>
-                                <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
-                            </div>
-                            <div class="disponibilidad">
-                                <span>DISPONIBLE</span>
-                            </div>
-                        </a>
-                    </div>
-                </section> <!-- CLOSE CONTENIDO -->
-            </main> <!-- CLOSE SUB-CONTENIDO PRINCIPAL -->
-        </div> <!-- CLOSE CONTENIDO PRINCIPAL -->
-    </div> <!-- CLOSE CONTENEDOR -->
-
-    <!-- SCRIPTS -->
-    <script src="https://kit.fontawesome.com/ac73eff05a.js" crossorigin="anonymous"></script>
-    <script th:src="@{/js/script.js}"></script>
+                            <img th:src="@{/img/avatar.png}" alt="" width="50px" height="50px">
+                        </div>
+                        <div class="disponibilidad">
+                            <span>DISPONIBLE</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
