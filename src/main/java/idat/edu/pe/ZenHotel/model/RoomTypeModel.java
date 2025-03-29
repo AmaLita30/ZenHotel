@@ -1,20 +1,20 @@
 package idat.edu.pe.ZenHotel.model;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "roomtype")
 public class RoomTypeModel {
-    private Integer idType;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idroomtype;
     private String type;
 
-    public RoomTypeModel(Integer idType, String type) {
-        this.idType = idType;
-        this.type = type;
+    public Integer getIdroomtype() {
+        return idroomtype;
     }
 
-    public Integer getIdType() {
-        return idType;
-    }
-
-    public void setIdType(Integer idType) {
-        this.idType = idType;
+    public void setIdroomtype(Integer idroomtype) {
+        this.idroomtype = idroomtype;
     }
 
     public String getType() {

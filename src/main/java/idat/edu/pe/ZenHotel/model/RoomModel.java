@@ -1,36 +1,36 @@
 package idat.edu.pe.ZenHotel.model;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "room")
 public class RoomModel {
-    private Integer idRoom;
-    private Integer roomNum;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private Integer roomnum;
     private Double price;
-    private String roomDescription;
-    private Integer idRoomType;
-    private Integer idRoomStatus;
+    private String roomdescription;
+    @ManyToOne
+    @JoinColumn(name = "idroomtype")
+    private RoomTypeModel roomtype;
+    @ManyToOne
+    @JoinColumn(name = "idroomstatus")
+    private RoomStatusModel roomstatus;
 
-    public RoomModel(Integer idRoom, Integer roomNum, Double price, String roomDescription, Integer idRoomType, Integer idRoomStatus) {
-        this.idRoom = idRoom;
-        this.roomNum = roomNum;
-        this.price = price;
-        this.roomDescription = roomDescription;
-        this.idRoomType = idRoomType;
-        this.idRoomStatus = idRoomStatus;
+    public Integer getId() {
+        return id;
     }
 
-    public Integer getIdRoom() {
-        return idRoom;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setIdRoom(Integer idRoom) {
-        this.idRoom = idRoom;
+    public Integer getRoomnum() {
+        return roomnum;
     }
 
-    public Integer getRoomNum() {
-        return roomNum;
-    }
-
-    public void setRoomNum(Integer roomNum) {
-        this.roomNum = roomNum;
+    public void setRoomnum(Integer roomnum) {
+        this.roomnum = roomnum;
     }
 
     public Double getPrice() {
@@ -41,27 +41,27 @@ public class RoomModel {
         this.price = price;
     }
 
-    public String getRoomDescription() {
-        return roomDescription;
+    public String getRoomdescription() {
+        return roomdescription;
     }
 
-    public void setRoomDescription(String roomDescription) {
-        this.roomDescription = roomDescription;
+    public void setRoomdescription(String roomdescription) {
+        this.roomdescription = roomdescription;
     }
 
-    public Integer getIdRoomType() {
-        return idRoomType;
+    public RoomTypeModel getRoomtype() {
+        return roomtype;
     }
 
-    public void setIdRoomType(Integer idRoomType) {
-        this.idRoomType = idRoomType;
+    public void setRoomtype(RoomTypeModel roomtype) {
+        this.roomtype = roomtype;
     }
 
-    public Integer getIdRoomStatus() {
-        return idRoomStatus;
+    public RoomStatusModel getRoomstatus() {
+        return roomstatus;
     }
 
-    public void setIdRoomStatus(Integer idRoomStatus) {
-        this.idRoomStatus = idRoomStatus;
+    public void setRoomstatus(RoomStatusModel roomstatus) {
+        this.roomstatus = roomstatus;
     }
 }

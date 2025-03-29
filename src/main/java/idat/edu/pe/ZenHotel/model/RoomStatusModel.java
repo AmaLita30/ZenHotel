@@ -1,20 +1,20 @@
 package idat.edu.pe.ZenHotel.model;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "roomstatus")
 public class RoomStatusModel {
-    private Integer idStatus;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idroomstatus;
     private String status;
 
-    public RoomStatusModel(Integer idStatus, String status) {
-        this.idStatus = idStatus;
-        this.status = status;
+    public Integer getIdroomstatus() {
+        return idroomstatus;
     }
 
-    public Integer getIdStatus() {
-        return idStatus;
-    }
-
-    public void setIdStatus(Integer idStatus) {
-        this.idStatus = idStatus;
+    public void setIdroomstatus(Integer idroomstatus) {
+        this.idroomstatus = idroomstatus;
     }
 
     public String getStatus() {
