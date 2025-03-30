@@ -1,5 +1,4 @@
 package idat.edu.pe.ZenHotel.model;
-
 import jakarta.persistence.*;
 
 @Entity

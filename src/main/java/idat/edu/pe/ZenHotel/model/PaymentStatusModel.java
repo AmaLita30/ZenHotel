@@ -1,27 +1,27 @@
 package idat.edu.pe.ZenHotel.model;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "paymentstatus")
 public class PaymentStatusModel {
-    private Integer idPaymentStatus;
-    private String paymentStatus;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idpaymentstatus;
+    private String paymentstatus;
 
-    public PaymentStatusModel(Integer idPaymentStatus, String paymentStatus) {
-        this.idPaymentStatus = idPaymentStatus;
-        this.paymentStatus = paymentStatus;
+    public Integer getIdpaymentstatus() {
+        return idpaymentstatus;
     }
 
-    public Integer getIdPaymentStatus() {
-        return idPaymentStatus;
+    public void setIdpaymentstatus(Integer idpaymentstatus) {
+        this.idpaymentstatus = idpaymentstatus;
     }
 
-    public void setIdPaymentStatus(Integer idPaymentStatus) {
-        this.idPaymentStatus = idPaymentStatus;
+    public String getPaymentstatus() {
+        return paymentstatus;
     }
 
-    public String getPaymentStatus() {
-        return paymentStatus;
-    }
-
-    public void setPaymentStatus(String paymentStatus) {
-        this.paymentStatus = paymentStatus;
+    public void setPaymentstatus(String paymentstatus) {
+        this.paymentstatus = paymentstatus;
     }
 }

@@ -5,9 +5,7 @@ public class EmployeeModel extends PersonModel{
     private String codEmployee;
     private Integer idRole;
 
-    public EmployeeModel(Integer idPerson, String fatherLastName, String motherLastName, String firstName, String midName, Integer dni, Integer telephone, String email, String address) {
-        super(idPerson, fatherLastName, motherLastName, firstName, midName, dni, telephone, email, address);
-    }
+
 
     public Integer getIdEmployee() {
         return idEmployee;

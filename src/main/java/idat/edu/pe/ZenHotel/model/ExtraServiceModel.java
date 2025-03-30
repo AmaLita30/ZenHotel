@@ -1,32 +1,30 @@
 package idat.edu.pe.ZenHotel.model;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "extraservice")
 public class ExtraServiceModel {
-    private Integer idAdService;
-    private String additionalService;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idextraservice;
+    private String extraservice;
     private Double price;
     private String description;
 
-    public ExtraServiceModel(Integer idAdService, String additionalService, Double price, String description) {
-        this.idAdService = idAdService;
-        this.additionalService = additionalService;
-        this.price = price;
-        this.description = description;
+    public Integer getIdextraservice() {
+        return idextraservice;
     }
 
-    public Integer getIdAdService() {
-        return idAdService;
+    public void setIdextraservice(Integer idextraservice) {
+        this.idextraservice = idextraservice;
     }
 
-    public void setIdAdService(Integer idAdService) {
-        this.idAdService = idAdService;
+    public String getExtraservice() {
+        return extraservice;
     }
 
-    public String getAdditionalService() {
-        return additionalService;
-    }
-
-    public void setAdditionalService(String additionalService) {
-        this.additionalService = additionalService;
+    public void setExtraservice(String extraservice) {
+        this.extraservice = extraservice;
     }
 
     public Double getPrice() {
@@ -45,4 +43,3 @@ public class ExtraServiceModel {
         this.description = description;
     }
 }
-

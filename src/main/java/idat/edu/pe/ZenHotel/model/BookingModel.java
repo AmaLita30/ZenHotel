@@ -1,69 +1,68 @@
 package idat.edu.pe.ZenHotel.model;
-
+import jakarta.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "booking")
 public class BookingModel {
-    private Integer idBooking;
-    private Date bookingDate;
-    private Date checkInDate;
-    private Date checkOutDate;
-    private Integer idEmployee;
-    private Integer idGuest;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idbooking;
+    private Date bookingdate;
+    private Date checkindate;
+    private Date checkoutdate;
+    @OneToOne
+    @JoinColumn(name = "idemployee")
+    private EmployeeModel employee;
+    @OneToOne
+    @JoinColumn(name = "idcustomer")
+    private CustomerModel customer;
 
-    public BookingModel(Integer idBooking, Date bookingDate, Date checkInDate, Date checkOutDate, Integer idEmployee, Integer idGuest) {
-        this.idBooking = idBooking;
-        this.bookingDate = bookingDate;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
-        this.idEmployee = idEmployee;
-        this.idGuest = idGuest;
+    public Integer getIdbooking() {
+        return idbooking;
     }
 
-    public Integer getIdBooking() {
-        return idBooking;
+    public void setIdbooking(Integer idbooking) {
+        this.idbooking = idbooking;
     }
 
-    public void setIdBooking(Integer idBooking) {
-        this.idBooking = idBooking;
+    public Date getBookingdate() {
+        return bookingdate;
     }
 
-    public Date getBookingDate() {
-        return bookingDate;
+    public void setBookingdate(Date bookingdate) {
+        this.bookingdate = bookingdate;
     }
 
-    public void setBookingDate(Date bookingDate) {
-        this.bookingDate = bookingDate;
+    public Date getCheckindate() {
+        return checkindate;
     }
 
-    public Date getCheckInDate() {
-        return checkInDate;
+    public void setCheckindate(Date checkindate) {
+        this.checkindate = checkindate;
     }
 
-    public void setCheckInDate(Date checkInDate) {
-        this.checkInDate = checkInDate;
+    public Date getCheckoutdate() {
+        return checkoutdate;
     }
 
-    public Date getCheckOutDate() {
-        return checkOutDate;
+    public void setCheckoutdate(Date checkoutdate) {
+        this.checkoutdate = checkoutdate;
     }
 
-    public void setCheckOutDate(Date checkOutDate) {
-        this.checkOutDate = checkOutDate;
+    public EmployeeModel getEmployee() {
+        return employee;
     }
 
-    public Integer getIdEmployee() {
-        return idEmployee;
+    public void setEmployee(EmployeeModel employee) {
+        this.employee = employee;
     }
 
-    public void setIdEmployee(Integer idEmployee) {
-        this.idEmployee = idEmployee;
+    public CustomerModel getCustomer() {
+        return customer;
     }
 
-    public Integer getIdGuest() {
-        return idGuest;
-    }
-
-    public void setIdGuest(Integer idGuest) {
-        this.idGuest = idGuest;
+    public void setCustomer(CustomerModel customer) {
+        this.customer = customer;
     }
 }
