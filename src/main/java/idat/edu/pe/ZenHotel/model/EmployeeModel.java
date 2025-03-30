@@ -1,35 +1,50 @@
 package idat.edu.pe.ZenHotel.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "employee")
 public class EmployeeModel extends PersonModel{
-    private Integer idEmployee;
-    private String codEmployee;
-    private Integer idRole;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idemployee;
+    private String codemployee;
+    private Integer idrole;
+    @OneToOne
+    @JoinColumn(name = "idperson")
+    private Integer idperson;
 
-    public EmployeeModel(Integer idPerson, String fatherLastName, String motherLastName, String firstName, String midName, Integer dni, Integer telephone, String email, String address) {
-        super(idPerson, fatherLastName, motherLastName, firstName, midName, dni, telephone, email, address);
+    public Integer getIdemployee() {
+        return idemployee;
     }
 
-    public Integer getIdEmployee() {
-        return idEmployee;
+    public void setIdemployee(Integer idemployee) {
+        this.idemployee = idemployee;
     }
 
-    public void setIdEmployee(Integer idEmployee) {
-        this.idEmployee = idEmployee;
+    public String getCodemployee() {
+        return codemployee;
     }
 
-    public String getCodEmployee() {
-        return codEmployee;
+    public void setCodemployee(String codemployee) {
+        this.codemployee = codemployee;
     }
 
-    public void setCodEmployee(String codEmployee) {
-        this.codEmployee = codEmployee;
+    public Integer getIdrole() {
+        return idrole;
     }
 
-    public Integer getIdRole() {
-        return idRole;
+    public void setIdrole(Integer idrole) {
+        this.idrole = idrole;
     }
 
-    public void setIdRole(Integer idRole) {
-        this.idRole = idRole;
+    @Override
+    public Integer getIdperson() {
+        return idperson;
+    }
+
+    @Override
+    public void setIdperson(Integer idperson) {
+        this.idperson = idperson;
     }
 }
