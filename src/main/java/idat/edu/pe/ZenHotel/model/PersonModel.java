@@ -1,34 +1,28 @@
 package idat.edu.pe.ZenHotel.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "person")
 public class PersonModel {
-    private Integer idPerson;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idperson;
     private String fatherLastName;
     private String motherLastName;
     private String firstName;
     private String midName;
     private Integer dni;
-    private Integer telephone;
+    private Integer cellphone;
     private String email;
     private String address;
 
-    public PersonModel(Integer idPerson, String fatherLastName, String motherLastName, String firstName, String midName, Integer dni, Integer telephone, String email, String address) {
-        this.idPerson = idPerson;
-        this.fatherLastName = fatherLastName;
-        this.motherLastName = motherLastName;
-        this.firstName = firstName;
-        this.midName = midName;
-        this.dni = dni;
-        this.telephone = telephone;
-        this.email = email;
-        this.address = address;
+    public Integer getIdperson() {
+        return idperson;
     }
 
-    public Integer getIdPerson() {
-        return idPerson;
-    }
-
-    public void setIdPerson(Integer idPerson) {
-        this.idPerson = idPerson;
+    public void setIdperson(Integer idperson) {
+        this.idperson = idperson;
     }
 
     public String getFatherLastName() {
@@ -71,12 +65,12 @@ public class PersonModel {
         this.dni = dni;
     }
 
-    public Integer getTelephone() {
-        return telephone;
+    public Integer getCellphone() {
+        return cellphone;
     }
 
-    public void setTelephone(Integer telephone) {
-        this.telephone = telephone;
+    public void setCellphone(Integer cellphone) {
+        this.cellphone = cellphone;
     }
 
     public String getEmail() {
