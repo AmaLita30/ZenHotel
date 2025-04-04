@@ -16,13 +16,13 @@
             </div>
             <!-- CONTENIDO -->
             <section class="main-content">
-                <form action="" method="post">
+                <form th:action="@{/role/save}" method="post" th:object="${role}">
                     <div class="register">
                         <label for="id">ID</label>
-                        <input type="text" disabled value="13" name="id" id="id">
+                        <input type="number" th:field="*{id}" id="id">
 
                         <label for="cod">USER ROLE</label>
-                        <input type="number" id="cod">
+                        <input type="text" id="cod" th:field="*{rolename}">
 
                         <button type="submit" class="btn-registrar">Guardar</button>
                         <button type="button" onclick="history.back()" class="btn-cancelar">Cancelar</button>
