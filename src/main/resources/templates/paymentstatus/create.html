@@ -10,16 +10,16 @@
         <!-- DESCRIPCIÓN -->
         <div class=main-description>
             <div>
-                <h2>Payment Method</h2>
-                <p>*Add New Payment Method</p>
+                <h2>Payment Status</h2>
+                <p>*Add New Payment Status</p>
             </div>
         </div>
         <!-- CONTENIDO -->
         <section class="main-content">
-            <form th:action="@{/paymentmethod/save}" method="post" th:object="${paymentmethod}">
+            <form th:action="@{/paymentstatus/save}" method="post" th:object="${paymentstatus}">
                 <div class="register">
-                    <label for="txtpaymentmethod">PAYMENT METHOD</label>
-                    <input type="text" id="txtpaymentmethod" th:field="*{paymentmethodname}">
+                    <label for="txtpaymentstatusname">PAYMENT STATUS</label>
+                    <input type="text" id="txtpaymentstatusname" th:field="*{paymentstatusname}">
 
                     <button type="submit" class="btn-registrar">Register</button>
                     <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>

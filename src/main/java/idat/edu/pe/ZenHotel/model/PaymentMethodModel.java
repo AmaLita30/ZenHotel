@@ -8,7 +8,6 @@ public class PaymentMethodModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String paymentmethodname;
 
     public Integer getId() {
