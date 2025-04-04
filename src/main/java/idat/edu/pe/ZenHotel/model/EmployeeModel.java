@@ -3,7 +3,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "employee")
-public class EmployeeModel extends PersonModel{
+public class EmployeeModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idemployee;
