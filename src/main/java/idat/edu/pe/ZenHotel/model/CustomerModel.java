@@ -2,8 +2,8 @@ package idat.edu.pe.ZenHotel.model;
 import jakarta.persistence.*;
 
 @Entity
-//@Table(name = "customer")
-public class CustomerModel{
+@Table(name = "customer")
+public class CustomerModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idcustomer;
