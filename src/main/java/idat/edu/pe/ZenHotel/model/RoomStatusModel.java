@@ -6,22 +6,22 @@ import jakarta.persistence.*;
 public class RoomStatusModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idroomstatus;
-    private String status;
+    private Integer idstatus;
+    private String roomstatusname;
 
-    public Integer getIdroomstatus() {
-        return idroomstatus;
+    public Integer getIdstatus() {
+        return idstatus;
     }
 
-    public void setIdroomstatus(Integer idroomstatus) {
-        this.idroomstatus = idroomstatus;
+    public void setIdstatus(Integer idstatus) {
+        this.idstatus = idstatus;
     }
 
-    public String getStatus() {
-        return status;
+    public String getRoomstatusname() {
+        return roomstatusname;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setRoomstatusname(String roomstatusname) {
+        this.roomstatusname = roomstatusname;
     }
 }
