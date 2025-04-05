@@ -10,11 +10,11 @@
         <!-- DESCRIPCIÓN -->
         <div class=main-description>
             <div>
-                <h2>Payment Status</h2>
-                <p>*List of Payment Status.</p>
+                <h2>Room Type</h2>
+                <p>*List of Room Types.</p>
             </div>
-            <a th:href="@{/paymentstatus/create}">
-                <span>New Payment Status</span>
+            <a th:href="@{/roomtype/create}">
+                <span>New Room Type</span>
                 <i class="fa-solid fa-plus"></i>
             </a>
         </div>
@@ -24,16 +24,16 @@
                 <thead>
                     <tr>
                         <td>ID</td>
-                        <td>Payment Status</td>
+                        <td>Room Type</td>
                         <td>Edit</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="paymentstatus : ${paymentstatues}">
-                        <td th:text="${paymentstatus.idpaymentstatus}"></td>
-                        <td th:text="${paymentstatus.paymentstatusname}"></td>
+                    <tr th:each="roomtype : ${roomtypes}">
+                        <td th:text="${roomtype.idroomtype}"></td>
+                        <td th:text="${roomtype.roomtypename}"></td>
                         <td>
-                            <a th:href="@{/paymentstatus/edit/{id}(id=${paymentstatus.idpaymentstatus})}" class="edit">
+                            <a th:href="@{/roomtype/edit/{id}(id=${roomtype.idroomtype})}" class="edit">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
                         </td>

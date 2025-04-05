@@ -5,31 +5,30 @@
     <title>ZenHotel</title>
 </head>
 <body>
-    <div th:replace="fragments/base :: base">
-        <main class="main" th:fragment="content">
-            <!-- DESCRIPCIÓN -->
-            <div class=main-description>
-                <div>
-                    <h2>Roles</h2>
-                    <p>*Register / Update Roles.</p>
-                </div>
+<div th:replace="fragments/base :: base">
+    <main class="main" th:fragment="content">
+        <!-- DESCRIPCIÓN -->
+        <div class=main-description>
+            <div>
+                <h2>Roles</h2>
+                <p>*Update Role.</p>
             </div>
-            <!-- CONTENIDO -->
-            <section class="main-content">
-                <form th:action="@{/role/save}" method="post" th:object="${role}">
-                    <div class="register">
-                        <label for="id">ID</label>
-                        <input type="number" th:field="*{id}" id="id">
+        </div>
+        <!-- CONTENIDO -->
+        <section class="main-content">
+            <form th:action="@{/role/save}" method="post" th:object="${role}">
+                <div class="register">
+                    <input type="hidden" th:field="*{idrole}">
 
-                        <label for="cod">USER ROLE</label>
-                        <input type="text" id="cod" th:field="*{rolename}">
+                    <label for="txtrolename">USER ROLE</label>
+                    <input type="text" id="txtrolename" th:field="*{rolename}">
 
-                        <button type="submit" class="btn-registrar">Guardar</button>
-                        <button type="button" onclick="history.back()" class="btn-cancelar">Cancelar</button>
-                    </div>
-                </form>
-            </section>
-        </main>
-    </div>
+                    <button type="submit" class="btn-registrar">Update</button>
+                    <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
 </body>
 </html>

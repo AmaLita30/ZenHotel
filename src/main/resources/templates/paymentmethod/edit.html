@@ -18,7 +18,7 @@
         <section class="main-content">
             <form th:action="@{/paymentmethod/save}" method="post" th:object="${paymentmethod}">
                 <div class="register">
-                    <input type="hidden" th:field="*{id}" >
+                    <input type="hidden" th:field="*{idpaymentmethod}" >
 
                     <label for="txtpaymentmethod">PAYMENT METHOD</label>
                     <input type="text" id="txtpaymentmethod" th:field="*{paymentmethodname}">

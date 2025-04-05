@@ -18,7 +18,7 @@
         <section class="main-content">
             <form th:action="@{/customer/save}" method="post" th:object="${customer}">
                 <div class="register">
-                    <input type="hidden" th:field="*{id}" >
+                    <input type="hidden" th:field="*{idcustomer}" >
 
                     <label for="txtfatherlast">FATHER'S LAST NAME</label>
                     <input type="text" placeholder="Father's Last Name" id="txtfatherlast" th:field="*{fatherlastname}">

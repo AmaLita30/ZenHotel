@@ -10,20 +10,18 @@
         <!-- DESCRIPCIÓN -->
         <div class=main-description>
             <div>
-                <h2>Payment Status</h2>
-                <p>*Update Payment Status</p>
+                <h2>Room Type</h2>
+                <p>*Add New Room Type.</p>
             </div>
         </div>
         <!-- CONTENIDO -->
         <section class="main-content">
-            <form th:action="@{/paymentstatus/save}" method="post" th:object="${paymentstatus}">
+            <form th:action="@{/roomtype/save}" method="post" th:object="${roomtype}">
                 <div class="register">
-                    <input type="hidden" th:field="*{idpaymentstatus}">
+                    <label for="txtroomtypename">ROOM TYPE</label>
+                    <input type="text" id="txtroomtypename" th:field="*{roomtypename}">
 
-                    <label for="txtpaymentstatusname">PAYMENT STATUS</label>
-                    <input type="text" id="txtpaymentstatusname" th:field="*{paymentstatusname}">
-
-                    <button type="submit" class="btn-registrar">Update</button>
+                    <button type="submit" class="btn-registrar">Register</button>
                     <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
                 </div>
             </form>

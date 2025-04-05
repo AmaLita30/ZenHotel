@@ -3,8 +3,8 @@ package idat.edu.pe.ZenHotel.service;
 import idat.edu.pe.ZenHotel.model.RoleModel;
 import idat.edu.pe.ZenHotel.repository.RoleRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+
 @Service
 public class RoleService {
     private final RoleRepository roleRepository;

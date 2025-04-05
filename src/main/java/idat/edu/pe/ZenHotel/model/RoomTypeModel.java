@@ -7,7 +7,7 @@ public class RoomTypeModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idroomtype;
-    private String type;
+    private String roomtypename;
 
     public Integer getIdroomtype() {
         return idroomtype;
@@ -17,11 +17,11 @@ public class RoomTypeModel {
         this.idroomtype = idroomtype;
     }
 
-    public String getType() {
-        return type;
+    public String getRoomtypename() {
+        return roomtypename;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setRoomtypename(String roomtypename) {
+        this.roomtypename = roomtypename;
     }
 }

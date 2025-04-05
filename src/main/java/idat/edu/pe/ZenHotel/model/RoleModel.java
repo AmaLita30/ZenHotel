@@ -2,19 +2,19 @@ package idat.edu.pe.ZenHotel.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "role")
 public class RoleModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idrole;
     private String rolename;
 
-    public Integer getId() {
-        return id;
+    public Integer getIdrole() {
+        return idrole;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdrole(Integer idrole) {
+        this.idrole = idrole;
     }
 
     public String getRolename() {

@@ -1,5 +1,4 @@
 package idat.edu.pe.ZenHotel.model;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -7,15 +6,15 @@ import jakarta.persistence.*;
 public class PaymentMethodModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idpaymentmethod;
     private String paymentmethodname;
 
-    public Integer getId() {
-        return id;
+    public Integer getIdpaymentmethod() {
+        return idpaymentmethod;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdpaymentmethod(Integer idpaymentmethod) {
+        this.idpaymentmethod = idpaymentmethod;
     }
 
     public String getPaymentmethodname() {

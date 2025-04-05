@@ -1,5 +1,4 @@
 package idat.edu.pe.ZenHotel.model;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -7,21 +6,21 @@ import jakarta.persistence.*;
 public class CustomerModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idcustomer;
     private String fatherlastname;
     private String motherlastname;
     private String firstname;
     private String middlename;
     private String dni;
-    private int phone;
+    private Integer phone;
     private String email;
 
-    public Integer getId() {
-        return id;
+    public Integer getIdcustomer() {
+        return idcustomer;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdcustomer(Integer idcustomer) {
+        this.idcustomer = idcustomer;
     }
 
     public String getFatherlastname() {
@@ -64,11 +63,11 @@ public class CustomerModel {
         this.dni = dni;
     }
 
-    public int getPhone() {
+    public Integer getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(Integer phone) {
         this.phone = phone;
     }
 

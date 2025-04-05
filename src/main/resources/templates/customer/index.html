@@ -11,7 +11,7 @@
         <div class=main-description>
             <div>
                 <h2>Customer</h2>
-                <p>*Total Customer Registry.</p>
+                <p>*List of Customers.</p>
             </div>
             <a th:href="@{/customer/create}">
                 <span>New Customer</span>
@@ -36,7 +36,7 @@
                 </thead>
                 <tbody>
                     <tr th:each="customer : ${customers}">
-                        <td th:text="${customer.id}"></td>
+                        <td th:text="${customer.idcustomer}"></td>
                         <td th:text="${customer.fatherlastname}"></td>
                         <td th:text="${customer.motherlastname}"></td>
                         <td th:text="${customer.firstname}"></td>
@@ -45,7 +45,7 @@
                         <td th:text="${customer.phone}"></td>
                         <td th:text="${customer.email}"></td>
                         <td>
-                            <a th:href="@{/customer/edit/{id}(id=${customer.id})}" class="edit">
+                            <a th:href="@{/customer/edit/{id}(id=${customer.idcustomer})}" class="edit">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
                         </td>

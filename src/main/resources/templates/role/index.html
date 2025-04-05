@@ -5,49 +5,43 @@
     <title>ZenHotel</title>
 </head>
 <body>
-    <div th:replace="fragments/base :: base">
-        <main class="main" th:fragment="content">
-            <!-- DESCRIPCIÓN -->
-            <div class=main-description>
-                <div>
-                    <h2>Roles</h2>
-                    <p>*Role List.</p>
-                </div>
-                <a th:href="@{/role/create}">
-                    <span>New Role</span>
-                    <i class="fa-solid fa-plus"></i>
-                </a>
+<div th:replace="fragments/base :: base">
+    <main class="main" th:fragment="content">
+        <!-- DESCRIPCIÓN -->
+        <div class=main-description>
+            <div>
+                <h2>Roles</h2>
+                <p>*List of Roles.</p>
             </div>
-            <!-- CONTENIDO -->
-            <section class="main-content">
-                <table class="table-50">
-                    <thead>
-                        <tr>
-                            <td>ID</td>
-                            <td>User Role</td>
-                            <td>Edit</td>
-                            <td>Delete</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="role : ${roles}">
-                            <td th:text="${role.id}"></td>
-                            <td th:text="${role.rolename}"></td>
-                            <td>
-                                <a th:href="@{/role/edit/{id}(id=${role.id})}" class="edit">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="#" class="delete">
-                                    <i class="fa-solid fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
-    </div>
+            <a th:href="@{/role/create}">
+                <span>New Role</span>
+                <i class="fa-solid fa-plus"></i>
+            </a>
+        </div>
+        <!-- CONTENIDO -->
+        <section class="main-content">
+            <table class="table-50">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>User Role</td>
+                        <td>Edit</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="role : ${roles}">
+                        <td th:text="${role.idrole}"></td>
+                        <td th:text="${role.rolename}"></td>
+                        <td>
+                            <a th:href="@{/role/edit/{id}(id=${role.idrole})}" class="edit">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
 </body>
 </html>

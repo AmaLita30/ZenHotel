@@ -30,10 +30,10 @@
                 </thead>
                 <tbody>
                     <tr th:each="paymentmethod : ${paymentmethods}">
-                        <td th:text="${paymentmethod.id}"></td>
+                        <td th:text="${paymentmethod.idpaymentmethod}"></td>
                         <td th:text="${paymentmethod.paymentmethodname}"></td>
                         <td>
-                            <a th:href="@{/paymentmethod/edit/{id}(id=${paymentmethod.id})}" class="edit">
+                            <a th:href="@{/paymentmethod/edit/{id}(id=${paymentmethod.idpaymentmethod})}" class="edit">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
                         </td>

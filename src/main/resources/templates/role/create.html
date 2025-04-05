@@ -11,21 +11,18 @@
         <div class=main-description>
             <div>
                 <h2>Roles</h2>
-                <p>*Register / Update Roles.</p>
+                <p>*Add New Role.</p>
             </div>
         </div>
         <!-- CONTENIDO -->
         <section class="main-content">
             <form th:action="@{/role/save}" method="post" th:object="${role}">
                 <div class="register">
-                    <label for="id">ID</label>
-                    <input type="number" th:field="*{id}" id="id">
+                    <label for="txtrolename">USER ROLE</label>
+                    <input type="text" id="txtrolename" th:field="*{rolename}">
 
-                    <label for="cod">USER ROLE</label>
-                    <input type="text" id="cod" th:field="*{rolename}">
-
-                    <button type="submit" class="btn-registrar">Guardar</button>
-                    <button type="button" onclick="history.back()" class="btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn-registrar">Register</button>
+                    <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
                 </div>
             </form>
         </section>
