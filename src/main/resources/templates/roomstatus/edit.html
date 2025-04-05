@@ -18,7 +18,7 @@
         <section class="main-content">
             <form th:action="@{/roomstatus/save}" method="post" th:object="${roomstatus}">
                 <div class="register">
-                    <input type="hidden" th:field="*{id}" >
+                    <input type="hidden" th:field="*{idstatus}" >
 
                     <label for="txtroomstatusname">PAYMENT STATUS</label>
                     <input type="text" id="txtroomstatusname" th:field="*{roomstatusname}">
