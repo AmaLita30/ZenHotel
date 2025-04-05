@@ -17,27 +17,166 @@
             <!-- CONTENIDO -->
             <section class="main-content">
                 <section class="analitics">
-                    <div class="analitic-box"></div>
-                    <div class="analitic-box"></div>
-                    <div class="analitic-box"></div>
+                    <div class="analitic-box">
+                        <canvas id="barChart" class="barChart"></canvas>
+                    </div>
+                    <div class="analitic-box">
+                        <canvas id="lineChart" class="lineChart"></canvas>
+                    </div>
+                    <div class="analitic-box">
+                        <canvas id="pieChart" class="pieChart"></canvas>
+                    </div>
                 </section>
 
                 <section class="analitics-data">
                     <div class="analitic-box-data">
-                        <span>Datos</span>
+                        <p>Habitaciones Disponibles</p>
+                        <p class="green">10</p>
                     </div>
-                    <div class="analitic-box-data"></div>
-                    <div class="analitic-box-data"></div>
-                    <div class="analitic-box-data"></div>
+                    <div class="analitic-box-data">
+                        <p>Habitaciones Reservadas</p>
+                        <p class="blue">3</p>
+                    </div>
+                    <div class="analitic-box-data">
+                        <p>Ingreso Diario</p>
+                        <p class="yellow">$ 2,750.33</p>
+                    </div>
+                    <div class="analitic-box-data">
+                        <p>Total Mensual</p>
+                        <p class="orange">10,099.75</p>
+                    </div>
                 </section>
 
-                <section class="analitics-img">
+                <!--<section class="analitics-img">
                     <div class="analitic-box-img"></div>
                     <div class="analitic-box-img"></div>
                     <div class="analitic-box-img"></div>
-                </section>
+                </section>-->
             </section>
         </main>
     </div>
+    <script th:inline="javascript">
+        const labels = [[${categorias}]];
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Ventas por Mes',
+                data: [[${valores}]],
+                backgroundColor: 'rgba(54, 162, 235, 0.6)'
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('barChart'), config);
+    </script>
+    <script th:inline="javascript">
+        const labels2 = [[${categorias}]]
+        const dataValues = [[${valores}]]
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Cantidad de Habitaciones por Estado',
+            data: dataValues,
+            fill: true,
+            borderColor: 'rgb(75, 192, 192)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            tension: 0.1
+        }]
+    };
+
+    const config2 = {
+        type: 'line',
+        data: data2,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'Evolución o Distribución por Estado de Habitación'
+              }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+
+    new Chart(document.getElementById('lineChart'), config2);
+    </script>
+
+    <script th:inline="javascript">
+
+        const labels3 = /*[[${categorias}]]*/ [];
+        const dataValues3 = /*[[${valores}]]*/ [];
+
+        const data3 = {
+            labels: labels3,
+            datasets: [{
+                label: 'Cantidad de Habitaciones',
+                data: dataValues3,
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.6)',
+                  'rgba(54, 162, 235, 0.6)',
+                  'rgba(255, 206, 86, 0.6)',
+                  'rgba(75, 192, 192, 0.6)',
+                  'rgba(153, 102, 255, 0.6)',
+                  'rgba(255, 159, 64, 0.6)'
+                ],
+                borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const config3 = {
+            type: 'pie',
+            data: data3,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    position: 'top',
+                  },
+                  title: {
+                    display: true,
+                    text: 'Distribución de Habitaciones por Estado'
+                  }
+                }
+            }
+        };
+
+        new Chart(
+            document.getElementById('pieChart'),
+            config3
+        );
+
+    </script>
 </body>
 </html>

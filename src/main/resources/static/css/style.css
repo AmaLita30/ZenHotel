@@ -181,10 +181,41 @@ p {
 }
 
 .analitic-box-data {
+    text-align: center;
     border-radius: var(--border-radius);
     background-color: #202020;
-    height: 120px;
     border: 1px solid #2c2c2c;
+    padding: 20px 0px;
+
+    p {
+        padding: 10px 0px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .blue {
+        background-color: rgba(54, 162, 235, 0.6);
+        border-top: 1px solid rgba(54, 162, 235, 1);
+        border-bottom: 1px solid rgba(54, 162, 235, 1);
+    }
+
+    .yellow {
+        background-color: rgba(255, 206, 86, 0.6);
+        border-top: 1px solid rgba(255, 206, 86, 1);
+        border-bottom: 1px solid rgba(255, 206, 86, 1);
+    }
+
+    .green {
+        background-color: rgba(75, 192, 192, 0.6);
+        border-top: 1px solid rgba(75, 192, 192, 1);
+        border-bottom: 1px solid rgba(75, 192, 192, 1);
+    }
+
+    .orange {
+        background-color: rgba(255, 159, 64, 0.6);
+        border-top: 1px solid rgba(255, 159, 64, 1);
+        border-bottom: 1px solid rgba(255, 159, 64, 1);
+    }
 }
 
 .analitic-box-img {
