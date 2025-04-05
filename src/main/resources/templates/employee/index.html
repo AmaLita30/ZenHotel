@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base :: head">
+    <meta charset="UTF-8">
+    <title>ZenHotel</title>
+</head>
+<body>
+    <div th:replace="fragments/base :: base">
+        <main class="main" th:fragment="content">
+            <!-- DESCRIPCIÓN -->
+            <div class=main-description>
+                <div>
+                    <h2>Employee</h2>
+                    <p>*Total Employee Registry.</p>
+                </div>
+                <a th:href="@{/employee/create}">
+                    <span>New Employee</span>
+                    <i class="fa-solid fa-plus"></i>
+                </a>
+            </div>
+            <!-- CONTENIDO -->
+            <section class="main-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>User Code</td>
+                            <td>Father's Last</td>
+                            <td>Mother's Last</td>
+                            <td>First Name</td>
+                            <td>Middle Name</td>
+                            <td>DNI</td>
+                            <td>Phone</td>
+                            <td>E-mail</td>
+                            <td>Role</td>
+                            <td>Edit</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="employee : ${employees}">
+                            <td th:text="${employee.idemployee}"></td>
+                            <td th:text="${employee.employeecode}"></td>
+                            <td th:text="${employee.fatherlastname}"></td>
+                            <td th:text="${employee.motherlastname}"></td>
+                            <td th:text="${employee.firstname}"></td>
+                            <td th:text="${employee.middlename}"></td>
+                            <td th:text="${employee.dni}"></td>
+                            <td th:text="${employee.phone}"></td>
+                            <td th:text="${employee.email}"></td>
+                            <td th:text="${employee.role.rolename}"></td>
+                            <td>
+                                <a th:href="@{/employee/edit/{id}(id=${employee.idemployee})}" class="edit">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

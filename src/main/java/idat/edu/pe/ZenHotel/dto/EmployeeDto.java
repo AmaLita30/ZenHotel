@@ -1,11 +1,6 @@
-package idat.edu.pe.ZenHotel.model;
-import jakarta.persistence.*;
+package idat.edu.pe.ZenHotel.dto;
 
-@Entity
-@Table(name = "employee")
-public class EmployeeModel{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EmployeeDto {
     private Integer idemployee;
     private String employeecode;
     private String fatherlastname;
@@ -15,9 +10,7 @@ public class EmployeeModel{
     private String dni;
     private String phone;
     private String email;
-    @ManyToOne
-    @JoinColumn(name = "idrole")
-    private RoleModel role;
+    private Integer rolename;
 
     public Integer getIdemployee() {
         return idemployee;
@@ -91,11 +84,11 @@ public class EmployeeModel{
         this.email = email;
     }
 
-    public RoleModel getRole() {
-        return role;
+    public Integer getRolename() {
+        return rolename;
     }
 
-    public void setRole(RoleModel role) {
-        this.role = role;
+    public void setRolename(Integer rolename) {
+        this.rolename = rolename;
     }
 }
