@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base :: head">
+    <meta charset="UTF-8">
+    <title>ZenHotel</title>
+</head>
+<body>
+<div th:replace="fragments/base :: base">
+    <main class="main" th:fragment="content">
+        <!-- DESCRIPCIÓN -->
+        <div class=main-description>
+            <div>
+                <h2>Customer</h2>
+                <p>*Update Customer.</p>
+            </div>
+        </div>
+        <!-- CONTENIDO -->
+        <section class="main-content">
+            <form th:action="@{/customer/save}" method="post" th:object="${customer}">
+                <div class="register">
+                    <input type="hidden" th:field="*{id}" >
+
+                    <label for="txtfatherlast">FATHER'S LAST NAME</label>
+                    <input type="text" placeholder="Father's Last Name" id="txtfatherlast" th:field="*{fatherlastname}">
+
+                    <label for="txtmotherlast">MOTHER'S LAST NAME</label>
+                    <input type="text" placeholder="Father's Last Name" id="txtmotherlast" th:field="*{motherlastname}">
+
+                    <label for="txtfirstName">FIRST NAME</label>
+                    <input type="text" placeholder="First Name" id="txtfirstName" th:field="*{firstname}">
+
+                    <label for="txtmiddleName">MIDDLE NAME</label>
+                    <input type="text" placeholder="Middle Name" id="txtmiddleName" th:field="*{middlename}">
+
+                    <label for="txtdni">DNI</label>
+                    <input type="number" id="txtdni" th:field="*{dni}">
+
+                    <label for="txtphone">PHONE</label>
+                    <input type="number" id="txtphone" th:field="*{phone}">
+
+                    <label for="txtemail">E-MAIL</label>
+                    <input type="email" placeholder="Example@gmail.com" id="txtemail" th:field="*{email}">
+
+                    <button type="submit" class="btn-registrar">Save</button>
+                    <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+</body>
+</html>

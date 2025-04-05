@@ -64,6 +64,18 @@
                         <span>Invoice</span>
                     </a>
                 </li>
+                <li class="has-submenu">
+                    <a class="nav-btn" href="#" >
+                        <div class="icon">
+                            <i class="fa-solid fa-money-bill"></i>
+                        </div>
+                        <span>Payment</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a th:href="@{/paymentmethod}">Payment Method</a></li>
+                        <li><a th:href="@{/paymentstatus}" class="ultimo">Payment Status</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a class="nav-btn" th:href="@{/extraService}">
                         <div class="icon">
