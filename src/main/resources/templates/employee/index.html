@@ -47,7 +47,8 @@
                             <td th:text="${employee.dni}"></td>
                             <td th:text="${employee.phone}"></td>
                             <td th:text="${employee.email}"></td>
-                            <td th:text="${employee.role.rolename}"></td>
+<!--                            <td th:text="${employee.role.rolename}"></td>-->
+                            <td th:text="${employee.role != null ? employee.role.rolename : 'No Rol'}"></td>
                             <td>
                                 <a th:href="@{/employee/edit/{id}(id=${employee.idemployee})}" class="edit">
                                     <i class="fa-solid fa-pen-to-square"></i>
