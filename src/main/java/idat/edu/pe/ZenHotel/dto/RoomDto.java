@@ -6,7 +6,7 @@ public class RoomDto {
     private Double price;
     private String roomdescription;
     private Integer idroomtype;
-    private Integer idroomstatus;
+    private Integer idstatus;
 
     public Integer getIdroom() {
         return idroom;
@@ -48,11 +48,11 @@ public class RoomDto {
         this.idroomtype = idroomtype;
     }
 
-    public Integer getIdroomstatus() {
-        return idroomstatus;
+    public Integer getIdstatus() {
+        return idstatus;
     }
 
-    public void setIdroomstatus(Integer idroomstatus) {
-        this.idroomstatus = idroomstatus;
+    public void setIdstatus(Integer idstatus) {
+        this.idstatus = idstatus;
     }
 }
