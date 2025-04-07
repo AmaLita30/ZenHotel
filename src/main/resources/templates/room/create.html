@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base :: head">
+    <meta charset="UTF-8">
+    <title>ZenHotel</title>
+</head>
+<body>
+<div th:replace="fragments/base :: base">
+    <main class="main" th:fragment="content">
+        <!-- DESCRIPCIÓN -->
+        <div class=main-description>
+            <div>
+                <h2>Room</h2>
+                <p>*Add New Room</p>
+            </div>
+        </div>
+        <!-- CONTENIDO -->
+        <section class="main-content">
+            <form th:action="@{/room/save}" method="post" th:object="${roomDTO}">
+                <div class="register">
+                    <label for="txtnumberroom">N.º ROOM</label>
+                    <input type="text" id="txtnumberroom" th:field="*{roomnum}">
+
+                    <label for="txtprice">PRICE</label>
+                    <input type="text" id="txtprice" th:field="*{price}">
+
+                    <label for="txtdescription">DESCRIPTION</label>
+                    <input type="text" id="txtdescription" th:field="*{roomdescription}">
+
+                    <label for="cbotype">TYPE</label>
+                    <select th:field="*{idroomtype}" id="cbotype">
+                        <option th:each="type : ${types}" th:value="${type.idroomtype}" th:text="${type.roomtypename}"></option>
+                    </select>
+
+                    <label for="txtstatus">STATUS</label>
+                    <select th:field="*{idstatus}" id="txtstatus">
+                        <option th:each="status : ${statuses}" th:value="${status.idstatus}" th:text="${status.roomstatusname}"></option>
+                    </select>
+
+                    <button type="submit" class="btn-registrar">Register</button>
+                    <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+</body>
+</html>
