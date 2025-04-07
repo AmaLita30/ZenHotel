@@ -30,25 +30,15 @@ public class RoomController {
 
     @GetMapping("/create")
     public String create(Model model){
-        model.addAttribute("room", new RoomDto());
+        model.addAttribute("roomDTO", new RoomDto());
         model.addAttribute("types", roomTypeService.getRoomTypes());
         model.addAttribute("statuses",roomStatusService.getRoomStatuses());
         return "room/create";
     }
 
     @PostMapping("/save")
-    public String save(@ModelAttribute RoomDto roomDto){
-        roomService.guardarDesdeDTO(roomDto);
+    public String save(@ModelAttribute("roomDTO") RoomDto roomDto){
+        roomService.saveRoom(roomDto);
         return "redirect:/room";
-    }
-
-    @GetMapping("/edit/{id}")
-    public String edit(Model model, @PathVariable int id) {
-        RoomDto roomDTO = roomService.getRoomDtoById(id);
-        model.addAttribute("roomDTO", roomDTO);
-        model.addAttribute("types", roomTypeService.getRoomTypes());
-        model.addAttribute("statuses", roomStatusService.getRoomStatuses());
-
-        return "room/edit";
     }
 }
