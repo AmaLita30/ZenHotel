@@ -1,21 +1,12 @@
-package idat.edu.pe.ZenHotel.model;
-import jakarta.persistence.*;
+package idat.edu.pe.ZenHotel.dto;
 
-@Entity
-@Table(name = "room")
-public class RoomModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class RoomDto {
     private Integer idroom;
     private Integer roomnum;
     private Double price;
     private String roomdescription;
-    @ManyToOne
-    @JoinColumn(name = "idroomtype")
-    private RoomTypeModel roomtype;
-    @ManyToOne
-    @JoinColumn(name = "idstatus")
-    private RoomStatusModel roomstatus;
+    private Integer idroomtype;
+    private Integer idroomstatus;
 
     public Integer getIdroom() {
         return idroom;
@@ -49,19 +40,19 @@ public class RoomModel {
         this.roomdescription = roomdescription;
     }
 
-    public RoomTypeModel getRoomtype() {
-        return roomtype;
+    public Integer getIdroomtype() {
+        return idroomtype;
     }
 
-    public void setRoomtype(RoomTypeModel roomtype) {
-        this.roomtype = roomtype;
+    public void setIdroomtype(Integer idroomtype) {
+        this.idroomtype = idroomtype;
     }
 
-    public RoomStatusModel getRoomstatus() {
-        return roomstatus;
+    public Integer getIdroomstatus() {
+        return idroomstatus;
     }
 
-    public void setRoomstatus(RoomStatusModel roomstatus) {
-        this.roomstatus = roomstatus;
+    public void setIdroomstatus(Integer idroomstatus) {
+        this.idroomstatus = idroomstatus;
     }
 }

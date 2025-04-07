@@ -10,30 +10,38 @@
         <!-- DESCRIPCIÓN -->
         <div class=main-description>
             <div>
-                <h2>Room Status</h2>
-                <p>*List of Room Status.</p>
+                <h2>Room</h2>
+                <p>**List of Room.</p>
             </div>
-            <a th:href="@{/roomstatus/create}">
-                <span>New Room Status</span>
+            <a th:href="@{/room/create}">
+                <span>New Room</span>
                 <i class="fa-solid fa-plus"></i>
             </a>
         </div>
         <!-- CONTENIDO -->
         <section class="main-content">
-            <table class="table-50">
+            <table>
                 <thead>
                     <tr>
                         <td>ID</td>
-                        <td>Room Status</td>
+                        <td>N.º Room</td>
+                        <td>Type</td>
+                        <td>Status</td>
+                        <td>Price</td>
+                        <td>Description</td>
                         <td>Edit</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="roomstatus : ${roomstatuses}">
-                        <td th:text="${roomstatus.idstatus}"></td>
-                        <td th:text="${roomstatus.roomstatusname}"></td>
+                    <tr th:each="room : ${rooms}">
+                        <td th:text="${room.idroom}"></td>
+                        <td th:text="${room.roomnum}"></td>
+                        <td th:text="${room.roomtype.roomtypename}"></td>
+                        <td th:text="${room.roomstatus.roomstatusname}"></td>
+                        <td th:text="${room.price}"></td>
+                        <td th:text="${room.roomdescription}"></td>
                         <td>
-                            <a th:href="@{/roomstatus/edit/{id}(id=${roomstatus.idstatus})}" class="edit">
+                            <a th:href="@{room/edit}" class="edit">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
                         </td>
