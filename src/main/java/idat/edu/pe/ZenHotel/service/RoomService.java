@@ -44,4 +44,18 @@ public class RoomService {
 
         roomRepository.save(room);
     }
+
+    public RoomDto getRoomDtoById(int id) {
+        RoomModel room = roomRepository.findById(id).orElse(null);
+
+        RoomDto dto = new RoomDto();
+        dto.setIdroom(room.getIdroom());
+        dto.setRoomnum(room.getRoomnum());
+        dto.setPrice(room.getPrice());
+        dto.setRoomdescription(room.getRoomdescription());
+        dto.setIdroomtype(room.getRoomtype().getIdroomtype());
+        dto.setIdstatus(room.getRoomstatus().getIdstatus());
+
+        return dto;
+    }
 }

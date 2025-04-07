@@ -41,7 +41,7 @@
                         <td th:text="${room.price}"></td>
                         <td th:text="${room.roomdescription}"></td>
                         <td>
-                            <a th:href="@{room/edit}" class="edit">
+                            <a th:href="@{/room/edit/{id}(id=${room.idroom})}" class="edit">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
                         </td>

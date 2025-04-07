@@ -15,7 +15,7 @@ public interface RoomRepository extends JpaRepository<RoomModel, Integer> {
             idstatus = :idstatus
             WHERE idroom = :idroom
             """, nativeQuery = true)
-    void actualizarProductoParcial(
+    void UpdateRoom(
             @Param("roomnum") String roomnum,
             @Param("price") Double price,
             @Param("roomdescription") String roomdescription,

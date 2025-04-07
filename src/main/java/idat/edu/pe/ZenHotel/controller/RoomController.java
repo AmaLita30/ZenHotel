@@ -7,10 +7,7 @@ import idat.edu.pe.ZenHotel.service.RoomStatusService;
 import idat.edu.pe.ZenHotel.service.RoomTypeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/room")
@@ -33,7 +30,7 @@ public class RoomController {
 
     @GetMapping("/create")
     public String create(Model model){
-        model.addAttribute("roomDTO", new RoomDto());
+        model.addAttribute("room", new RoomDto());
         model.addAttribute("types", roomTypeService.getRoomTypes());
         model.addAttribute("statuses",roomStatusService.getRoomStatuses());
         return "room/create";
@@ -43,5 +40,15 @@ public class RoomController {
     public String save(@ModelAttribute RoomDto roomDto){
         roomService.guardarDesdeDTO(roomDto);
         return "redirect:/room";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String edit(Model model, @PathVariable int id) {
+        RoomDto roomDTO = roomService.getRoomDtoById(id);
+        model.addAttribute("roomDTO", roomDTO);
+        model.addAttribute("types", roomTypeService.getRoomTypes());
+        model.addAttribute("statuses", roomStatusService.getRoomStatuses());
+
+        return "room/edit";
     }
 }
