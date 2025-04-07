@@ -7,7 +7,7 @@ public class ExtraServiceModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idextraservice;
-    private String extraservice;
+    private String extraservicename;
     private Double price;
     private String description;
 
@@ -19,12 +19,12 @@ public class ExtraServiceModel {
         this.idextraservice = idextraservice;
     }
 
-    public String getExtraservice() {
-        return extraservice;
+    public String getExtraservicename() {
+        return extraservicename;
     }
 
-    public void setExtraservice(String extraservice) {
-        this.extraservice = extraservice;
+    public void setExtraservicename(String extraservicename) {
+        this.extraservicename = extraservicename;
     }
 
     public Double getPrice() {

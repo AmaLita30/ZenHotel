@@ -21,31 +21,31 @@
                         <input type="hidden" th:field="*{idemployee}" >
 
                         <label for="code">USER CODE</label>
-                        <input type="text" name="code" id="code" th:field="*{employeecode}">
+                        <input type="text" name="code" id="code" th:field="*{employeecode}" required>
 
                         <label for="fatherLast">FATHER'S LAST NAME</label>
-                        <input type="text" placeholder="Father's Last Name" id="fatherLast" th:field="*{fatherlastname}">
+                        <input type="text" placeholder="Father's Last Name" id="fatherLast" th:field="*{fatherlastname}" required>
 
                         <label for="motherLast">MOTHER'S LAST NAME</label>
-                        <input type="text" placeholder="Mother's Last Name" id="motherLast" th:field="*{motherlastname}">
+                        <input type="text" placeholder="Mother's Last Name" id="motherLast" th:field="*{motherlastname}" required>
 
                         <label for="firstName">FIRST NAME</label>
-                        <input type="text" placeholder="First Name" id="firstName" th:field="*{firstname}">
+                        <input type="text" placeholder="First Name" id="firstName" th:field="*{firstname}" required>
 
                         <label for="middleName">MIDDLE NAME</label>
                         <input type="text" placeholder="Middle Name" id="middleName" th:field="*{middlename}">
 
-                        <label for="dni">PHONE</label>
-                        <input type="number" name="dni" id="dni" th:field="*{dni}">
+                        <label for="dni">DNI</label>
+                        <input type="number" name="dni" id="dni" th:field="*{dni}" required>
 
                         <label for="phone">PHONE</label>
-                        <input type="number" name="phone" id="phone" th:field="*{phone}">
+                        <input type="number" name="phone" id="phone" th:field="*{phone}" required>
 
                         <label for="email">E-MAIL</label>
-                        <input type="email" name="email" placeholder="Example@gmail.com" id="email" th:field="*{email}">
+                        <input type="email" name="email" placeholder="Example@gmail.com" id="email" th:field="*{email}" required>
 
                         <label for="role">ROLE</label>
-                        <input type="text" name="role" placeholder="Role" id="role" th:field="*{role.rolename}">
+                        <input type="text" name="role" placeholder="Role" id="role" th:field="*{role.rolename}" required>
 
                         <button type="submit" class="btn-registrar">Save</button>
                         <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>

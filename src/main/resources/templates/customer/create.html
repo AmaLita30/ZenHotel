@@ -19,25 +19,25 @@
             <form th:action="@{/customer/save}" method="post" th:object="${customer}">
                 <div class="register">
                     <label for="txtfatherlast">FATHER'S LAST NAME</label>
-                    <input type="text" placeholder="Father's Last Name" id="txtfatherlast" th:field="*{fatherlastname}">
+                    <input type="text" placeholder="Father's Last Name" id="txtfatherlast" th:field="*{fatherlastname}" required>
 
                     <label for="txtmotherlast">MOTHER'S LAST NAME</label>
-                    <input type="text" placeholder="Father's Last Name" id="txtmotherlast" th:field="*{motherlastname}">
+                    <input type="text" placeholder="Father's Last Name" id="txtmotherlast" th:field="*{motherlastname}" required>
 
                     <label for="txtfirstName">FIRST NAME</label>
-                    <input type="text" placeholder="First Name" id="txtfirstName" th:field="*{firstname}">
+                    <input type="text" placeholder="First Name" id="txtfirstName" th:field="*{firstname}" required>
 
                     <label for="txtmiddleName">MIDDLE NAME</label>
                     <input type="text" placeholder="Middle Name" id="txtmiddleName" th:field="*{middlename}">
 
                     <label for="txtdni">DNI</label>
-                    <input type="number" id="txtdni" th:field="*{dni}">
+                    <input type="number" id="txtdni" th:field="*{dni}" required>
 
                     <label for="txtphone">PHONE</label>
-                    <input type="number" id="txtphone" th:field="*{phone}">
+                    <input type="number" id="txtphone" th:field="*{phone}" required>
 
                     <label for="txtemail">E-MAIL</label>
-                    <input type="email" placeholder="Example@gmail.com" id="txtemail" th:field="*{email}">
+                    <input type="email" placeholder="Example@gmail.com" id="txtemail" th:field="*{email}" required>
 
                     <button type="submit" class="btn-registrar">Save</button>
                     <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>

@@ -13,7 +13,7 @@
                     <h2>Extra Service</h2>
                     <p>*Total Registry.</p>
                 </div>
-                <a th:href="@{/customerForm}">
+                <a th:href="@{/extraservice/create}">
                     <span>New Service</span>
                     <i class="fa-solid fa-plus"></i>
                 </a>
@@ -28,39 +28,17 @@
                         <td>Price</td>
                         <td>Description</td>
                         <td>Edit</td>
-                        <td>Delete</td>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Premium Support</td>
-                        <td>49.99</td>
-                        <td>24/7 priority support for all services.</td>
+                    <tr th:each="extraservice : ${extraservices}">
+                        <td th:text="${extraservice.idextraservice}"></td>
+                        <td th:text="${extraservice.extraservicename}"></td>
+                        <td th:text="${extraservice.price}"></td>
+                        <td th:text="${extraservice.description}"></td>
                         <td>
-                            <a href="#" class="edit">
+                            <a th:href="@{/extraservice/edit/{id}(id=${extraservice.idextraservice})}" class="edit">
                                 <i class="fa-solid fa-pen-to-square"></i>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="delete">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Cloud Storage</td>
-                        <td>19.99</td>
-                        <td>Additional 100GB of cloud storage.</td>
-                        <td>
-                            <a href="#" class="edit">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#" class="delete">
-                                <i class="fa-solid fa-trash"></i>
                             </a>
                         </td>
                     </tr>

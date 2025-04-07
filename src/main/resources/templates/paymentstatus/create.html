@@ -19,7 +19,7 @@
             <form th:action="@{/paymentstatus/save}" method="post" th:object="${paymentstatus}">
                 <div class="register">
                     <label for="txtpaymentstatusname">PAYMENT STATUS</label>
-                    <input type="text" id="txtpaymentstatusname" th:field="*{paymentstatusname}">
+                    <input type="text" id="txtpaymentstatusname" th:field="*{paymentstatusname}" required>
 
                     <button type="submit" class="btn-registrar">Register</button>
                     <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>

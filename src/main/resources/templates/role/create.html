@@ -19,7 +19,7 @@
             <form th:action="@{/role/save}" method="post" th:object="${role}">
                 <div class="register">
                     <label for="txtrolename">USER ROLE</label>
-                    <input type="text" id="txtrolename" th:field="*{rolename}">
+                    <input type="text" id="txtrolename" th:field="*{rolename}" required>
 
                     <button type="submit" class="btn-registrar">Register</button>
                     <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>

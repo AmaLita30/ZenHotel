@@ -21,7 +21,7 @@
                     <input type="hidden" th:field="*{idroomtype}">
 
                     <label for="txtroomtypename">ROOM TYPE</label>
-                    <input type="text" id="txtroomtypename" th:field="*{roomtypename}">
+                    <input type="text" id="txtroomtypename" th:field="*{roomtypename}" required>
 
                     <button type="submit" class="btn-registrar">Update</button>
                     <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>

@@ -10,16 +10,24 @@
         <!-- DESCRIPCIÓN -->
         <div class=main-description>
             <div>
-                <h2>Payment Method</h2>
-                <p>*Add New Payment Method</p>
+                <h2>Extra Services</h2>
+                <p>*Add New Service.</p>
             </div>
         </div>
         <!-- CONTENIDO -->
         <section class="main-content">
-            <form th:action="@{/paymentmethod/save}" method="post" th:object="${paymentmethod}">
+            <form th:action="@{/extraservice/save}" method="post" th:object="${extraservice}">
                 <div class="register">
-                    <label for="txtpaymentmethod">PAYMENT METHOD</label>
-                    <input type="text" id="txtpaymentmethod" th:field="*{paymentmethodname}" required>
+                    <input type="hidden" th:field="*{idextraservice}">
+
+                    <label for="txtextraservicename">SERVICIO</label>
+                    <input type="text" id="txtextraservicename" th:field="*{extraservicename}" required>
+
+                    <label for="txtextraserviceprice">PRECIO</label>
+                    <input type="text" id="txtextraserviceprice" th:field="*{price}" required>
+
+                    <label for="txtextraservicedesc">DESCRIPTION</label>
+                    <input type="text" id="txtextraservicedesc" th:field="*{description}" required>
 
                     <button type="submit" class="btn-registrar">Register</button>
                     <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>

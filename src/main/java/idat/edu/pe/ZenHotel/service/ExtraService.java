@@ -6,10 +6,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class ExtraServiceService {
+public class ExtraService {
     private final ExtraServiceRepository extraServiceRepository;
 
-    public ExtraServiceService(ExtraServiceRepository extraServiceRepository) {
+    public ExtraService(ExtraServiceRepository extraServiceRepository) {
         this.extraServiceRepository = extraServiceRepository;
     }
 

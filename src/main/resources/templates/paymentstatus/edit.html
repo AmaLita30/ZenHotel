@@ -21,7 +21,7 @@
                     <input type="hidden" th:field="*{idpaymentstatus}">
 
                     <label for="txtpaymentstatusname">PAYMENT STATUS</label>
-                    <input type="text" id="txtpaymentstatusname" th:field="*{paymentstatusname}">
+                    <input type="text" id="txtpaymentstatusname" th:field="*{paymentstatusname}" required>
 
                     <button type="submit" class="btn-registrar">Update</button>
                     <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
