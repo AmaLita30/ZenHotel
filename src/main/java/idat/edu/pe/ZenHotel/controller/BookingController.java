@@ -1,6 +1,6 @@
 package idat.edu.pe.ZenHotel.controller;
 
-import idat.edu.pe.ZenHotel.model.RoomModel;
+import idat.edu.pe.ZenHotel.model.BookingModel;
 import idat.edu.pe.ZenHotel.service.BookingService;
 import idat.edu.pe.ZenHotel.service.RoomService;
 import org.springframework.stereotype.Controller;
@@ -29,5 +29,11 @@ public class BookingController {
     public String reception(Model model){
         model.addAttribute("rooms", roomService.getRooms());
         return "booking/reception";
+    }
+
+    @GetMapping("/create")
+    public String create(Model model) {
+        model.addAttribute("booking", new BookingModel());
+        return "booking/create";
     }
 }
