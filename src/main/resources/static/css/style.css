@@ -272,7 +272,7 @@ p {
         
     }
 
-    .ocupado {
+    .occupied {
         background-color: var(--red);
 
         .disponibilidad {
@@ -280,11 +280,19 @@ p {
         }
     }
 
-    .reservado {
+    .reserved {
         background-color: rgb(84, 51, 230);
 
         .disponibilidad {
             background-color: rgb(55, 26, 181);
+        }
+    }
+
+    .maintenance {
+        background-color: rgb(255, 165, 0);
+
+        .disponibilidad {
+            background-color: rgb(204, 102, 0);
         }
     }
 }

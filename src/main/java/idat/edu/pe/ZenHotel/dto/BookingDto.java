@@ -1,22 +1,14 @@
-package idat.edu.pe.ZenHotel.model;
-import jakarta.persistence.*;
+package idat.edu.pe.ZenHotel.dto;
+
 import java.util.Date;
 
-@Entity
-@Table(name = "booking")
-public class BookingModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class BookingDto {
     private Integer idbooking;
     private Date bookingdate;
     private Date checkindate;
     private Date checkoutdate;
-    @OneToOne
-    @JoinColumn(name = "idroom")
-    private RoomModel room;
-    @OneToOne
-    @JoinColumn(name = "idcustomer")
-    private CustomerModel customer;
+    private Integer idroom;
+    private Integer idcustomer;
 
     public Integer getIdbooking() {
         return idbooking;
@@ -50,19 +42,19 @@ public class BookingModel {
         this.checkoutdate = checkoutdate;
     }
 
-    public RoomModel getRoom() {
-        return room;
+    public Integer getIdroom() {
+        return idroom;
     }
 
-    public void setRoom(RoomModel room) {
-        this.room = room;
+    public void setIdroom(Integer idroom) {
+        this.idroom = idroom;
     }
 
-    public CustomerModel getCustomer() {
-        return customer;
+    public Integer getIdcustomer() {
+        return idcustomer;
     }
 
-    public void setCustomer(CustomerModel customer) {
-        this.customer = customer;
+    public void setIdcustomer(Integer idcustomer) {
+        this.idcustomer = idcustomer;
     }
 }
