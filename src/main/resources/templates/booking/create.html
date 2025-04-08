@@ -41,6 +41,32 @@
                     </div>
                 </div>
             </section>
+
+            <section class="main-content">
+                <form th:action="@{/booking/save}" method="post" th:object="${booking}">
+                    <div class="register">
+                        <input type="hidden"  >
+
+                        <label for="txtbookingdate">BOOKING DATE</label>
+                        <input type="text" name="code" id="txtbookingdate"  required>
+
+                        <label for="txtcheckindate">CHECK-IN DATE</label>
+                        <input type="text" id="txtcheckindate"  required>
+
+                        <label for="txtcheckoutdate">CHECK-OUT DATE</label>
+                        <input type="text" id="txtcheckoutdate"  required>
+
+                        <label for="txtroom">ROOM</label>
+                        <input type="text" id="txtroom"  required>
+
+                        <label for="txtcustomer">CUSTOMER</label>
+                        <input type="text" id="txtcustomer" >
+
+                        <button type="submit" class="btn-registrar">Save</button>
+                        <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
+                    </div>
+                </form>
+            </section>
         </main>
     </div>
 </body>
