@@ -45,22 +45,22 @@
             <section class="main-content">
                 <form th:action="@{/booking/save}" method="post" th:object="${booking}">
                     <div class="register">
-                        <input type="hidden"  >
+                        <input type="hidden" th:field="*{idbooking}" >
 
                         <label for="txtbookingdate">BOOKING DATE</label>
-                        <input type="text" name="code" id="txtbookingdate"  required>
+                        <input type="text" name="code" id="txtbookingdate" th:field="*{bookingdate}" required>
 
                         <label for="txtcheckindate">CHECK-IN DATE</label>
-                        <input type="text" id="txtcheckindate"  required>
+                        <input type="text" id="txtcheckindate" th:field="*{checkindate}" required>
 
                         <label for="txtcheckoutdate">CHECK-OUT DATE</label>
-                        <input type="text" id="txtcheckoutdate"  required>
+                        <input type="text" id="txtcheckoutdate" th:field="*{checkoutdate}" required>
 
                         <label for="txtroom">ROOM</label>
-                        <input type="text" id="txtroom"  required>
+                        <input type="text" id="txtroom" th:field="*{room.idroom}" required>
 
                         <label for="txtcustomer">CUSTOMER</label>
-                        <input type="text" id="txtcustomer" >
+                        <input type="text" id="txtcustomer" th:field="*{customer.firstname}" >
 
                         <button type="submit" class="btn-registrar">Save</button>
                         <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
