@@ -22,7 +22,7 @@ public class RoomService {
         return roomRepository.findById(id).orElse(null);
     }
 
-    public void saveRoom(RoomDto dto) {
+    public void updateRoom(RoomDto dto) {
         roomRepository.UpdateRoom(
                 dto.getRoomnum(),
                 dto.getPrice(),
@@ -31,5 +31,21 @@ public class RoomService {
                 dto.getIdstatus(),
                 dto.getIdroom()
         );
+    }
+
+    public Long getAvailableRoomCount() {
+        return roomRepository.countAvailableRooms();
+    }
+
+    public Long getReservedRoomCount() {
+        return roomRepository.countReservedRooms();
+    }
+
+    public Long getOccupiedRoomCount() {
+        return roomRepository.countOccupiedRooms();
+    }
+
+    public List<Object[]> getRoomCountByStatus() {
+        return roomRepository.countRoomsByStatus();
     }
 }

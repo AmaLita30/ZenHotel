@@ -2,6 +2,7 @@ package idat.edu.pe.ZenHotel.controller;
 
 import idat.edu.pe.ZenHotel.dto.RoomDto;
 import idat.edu.pe.ZenHotel.model.RoleModel;
+import idat.edu.pe.ZenHotel.model.RoomModel;
 import idat.edu.pe.ZenHotel.service.RoomService;
 import idat.edu.pe.ZenHotel.service.RoomStatusService;
 import idat.edu.pe.ZenHotel.service.RoomTypeService;
@@ -34,11 +35,5 @@ public class RoomController {
         model.addAttribute("types", roomTypeService.getRoomTypes());
         model.addAttribute("statuses",roomStatusService.getRoomStatuses());
         return "room/create";
-    }
-
-    @PostMapping("/save")
-    public String save(@ModelAttribute("roomDTO") RoomDto roomDto){
-        roomService.saveRoom(roomDto);
-        return "redirect:/room";
     }
 }

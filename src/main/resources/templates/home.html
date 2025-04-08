@@ -30,28 +30,22 @@
 
                 <section class="analitics-data">
                     <div class="analitic-box-data">
-                        <p>Habitaciones Disponibles</p>
-                        <p class="green">10</p>
+                        <p>Available Rooms</p>
+                        <p class="green" th:text="${availableCount}">0</p>
                     </div>
                     <div class="analitic-box-data">
-                        <p>Habitaciones Reservadas</p>
-                        <p class="blue">3</p>
+                        <p>Reserved Rooms</p>
+                        <p class="blue" th:text="${reservedCount}">0</p>
                     </div>
                     <div class="analitic-box-data">
-                        <p>Ingreso Diario</p>
-                        <p class="yellow">$ 2,750.33</p>
+                        <p>Occupied Rooms</p>
+                        <p class="yellow" th:text="${occupiedCount}">0</p>
                     </div>
                     <div class="analitic-box-data">
                         <p>Total Mensual</p>
                         <p class="orange">10,099.75</p>
                     </div>
                 </section>
-
-                <!--<section class="analitics-img">
-                    <div class="analitic-box-img"></div>
-                    <div class="analitic-box-img"></div>
-                    <div class="analitic-box-img"></div>
-                </section>-->
             </section>
         </main>
     </div>
@@ -60,9 +54,16 @@
         const data = {
             labels: labels,
             datasets: [{
-                label: 'Ventas por Mes',
+                label: 'Habitaciones por Estado',
                 data: [[${valores}]],
-                backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                backgroundColor: [
+                  'rgba(54, 162, 235, 0.6)',
+                  'rgba(75, 192, 192, 0.6)',
+                  'rgba(255, 206, 86, 0.6)',
+                  'rgba(255, 99, 132, 0.6)',
+                  'rgba(153, 102, 255, 0.6)',
+                  'rgba(255, 159, 64, 0.6)'
+                ]
             }]
         };
 
@@ -72,6 +73,16 @@
             options: {
                 maintainAspectRatio: false,
                 responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Estado Actual de las Habitaciones'
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true
