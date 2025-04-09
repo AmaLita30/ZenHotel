@@ -1,11 +1,16 @@
 package idat.edu.pe.ZenHotel.dto;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class BookingDto {
     private Integer idbooking;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date bookingdate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date checkindate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date checkoutdate;
     private Integer idroom;
     private Integer idcustomer;

@@ -17,7 +17,7 @@
         <!-- CONTENIDO -->
         <section class="main-content">
             <div class="recepcion">
-                <a th:href="@{/booking/create}" th:each="room : ${rooms}" th:classappend="${room.roomstatus.roomstatusname.toLowerCase()}">
+                <a th:href="@{/booking/create/{id}(id=${room.idroom})}" th:each="room : ${rooms}" th:classappend="${room.roomstatus.roomstatusname.toLowerCase()}">
                     <div class="btn-content">
                         <div>
                             <h3 th:text="'Nro: ' + ${room.roomnum}"></h3>

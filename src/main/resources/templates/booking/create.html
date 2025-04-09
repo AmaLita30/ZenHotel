@@ -5,69 +5,62 @@
     <title>ZenHotel</title>
 </head>
 <body>
-    <div th:replace="fragments/base :: base">
-        <main class="main" th:fragment="content">
-            <!-- DESCRIPCIÓN -->
-            <div class=main-description>
-                <div>
-                    <h2>Reception</h2>
-                    <p>*Room Availability.</p>
-                </div>
+<div th:replace="fragments/base :: base">
+    <main class="main" th:fragment="content">
+        <!-- DESCRIPCIÓN -->
+        <div class=main-description>
+            <div>
+                <h2>Reception</h2>
+                <p>*Room Availability.</p>
             </div>
-            <!-- CONTENIDO -->
-            <section class="main-content">
-                <table class="detalle">
-                    <tr>
-                        <td class="th">N.º HABITACIÓN</td>
-                        <td>101</td>
-                        <td class="th">TIPO</td>
-                        <td>Individual</td>
-                        <td class="th">ESTADO</td>
-                        <td >Disponible</td>
-                    </tr>
-                    <tr>
-                        <td class="th">DESCRIPCIÓN</td>
-                        <td colspan="3">Tv, Wifi, Ducha Privada</td>
-                        <td class="th">PRECIO</td>
-                        <td>S/. 120.00</td>
-                    </tr>
-                </table>
-                <div>
-                    <div>
-                        <label for="">Cliente</label>
-                        <select name="" id="">
-                            <option value="">Joel Fernandez Pancorvo</option>
-                        </select>
-                    </div>
+        </div>
+        <!-- CONTENIDO -->
+        <section class="main-content">
+            <table class="detalle">
+                <tr th:object="${room}">
+                    <td th:text="${room.idroom}" style="display: none;"></td>
+                    <td class="th">ROOM N° :</td>
+                    <td th:text="${room.roomnum}"></td>
+                    <td class="th">TYPE :</td>
+                    <td th:text="${room.roomtype.roomtypename}"></td>
+                    <td class="th">STATUS :</td>
+                    <td th:text="${room.roomstatus.roomstatusname}"></td>
+                </tr>
+                <tr>
+                    <td class="th">DESCRIPTION :</td>
+                    <td th:text="${room.roomdescription}" colspan="3"></td>
+                    <td class="th">PRICE :</td>
+                    <td th:text="${room.price}"></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="main-content">
+            <form th:action="@{/booking/save}" method="post" th:object="${booking}">
+                <div class="register">
+
+                    <label for="txtbookingdate">BOOKING DATE</label>
+                    <input type="date" name="code" id="txtbookingdate" th:field="*{bookingdate}" >
+
+                    <label for="cbocustomer">CUSTOMER</label>
+                    <select th:field="*{idcustomer}" id="cbocustomer">
+                        <option th:each="customer : ${customers}" th:value="${customer.idcustomer}" th:text="${customer.firstname} +' '+ ${customer.fatherlastname}"></option>
+                    </select>
+
+                    <label for="txtcheckindate">CHECK-IN DATE</label>
+                    <input type="date" id="txtcheckindate" th:field="*{checkindate}" required>
+
+                    <input type="hidden" id="txtroom" th:value="${idroom}" th:field="${room.idroom}">
+
+                    <label for="txtcheckoutdate">CHECK-OUT DATE</label>
+                    <input type="date" id="txtcheckoutdate" th:field="*{checkoutdate}" required>
+
+                    <button type="submit" class="btn-registrar">Save</button>
+                    <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
                 </div>
-            </section>
-
-            <section class="main-content">
-                <form th:action="@{/booking/save}" method="post" th:object="${booking}">
-                    <div class="register">
-                        <input type="hidden" th:field="*{idbooking}" >
-
-                        <label for="txtbookingdate">BOOKING DATE</label>
-                        <input type="text" name="code" id="txtbookingdate" th:field="*{bookingdate}" required>
-
-                        <label for="txtcheckindate">CHECK-IN DATE</label>
-                        <input type="text" id="txtcheckindate" th:field="*{checkindate}" required>
-
-                        <label for="txtcheckoutdate">CHECK-OUT DATE</label>
-                        <input type="text" id="txtcheckoutdate" th:field="*{checkoutdate}" required>
-
-                        <label for="txtroom">ROOM</label>
-                        <input type="text" id="txtroom" th:field="*{room.idroom}" required>
-
-                        <label for="txtcustomer">CUSTOMER</label>
-                        <input type="text" id="txtcustomer" th:field="*{customer.firstname}" >
-
-                        <button type="submit" class="btn-registrar">Save</button>
-                        <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
-                    </div>
-                </form>
-            </section>
-        </main>
-    </div>
+            </form>
+        </section>
+    </main>
+</div>
 </body>
 </html>
