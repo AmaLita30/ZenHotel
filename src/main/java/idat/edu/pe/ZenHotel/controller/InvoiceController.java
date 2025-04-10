@@ -1,12 +1,37 @@
 package idat.edu.pe.ZenHotel.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import idat.edu.pe.ZenHotel.dto.InvoiceDto;
+import idat.edu.pe.ZenHotel.model.InvoiceModel;
+import idat.edu.pe.ZenHotel.service.InvoiceService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/invoices")
 public class InvoiceController {
-    @GetMapping("/invoice")
-    public String invoice(){
-        return "invoice";
+
+    @Autowired
+    private InvoiceService invoiceService;
+
+    @GetMapping
+    public List<InvoiceModel> listAll() {
+        return invoiceService.listAll();
+    }
+
+    @PostMapping
+    public InvoiceModel create(@RequestBody InvoiceDto dto) {
+        return invoiceService.save(dto);
+    }
+
+    @GetMapping("/{id}")
+    public InvoiceModel getById(@PathVariable Integer id) {
+        return invoiceService.getById(id).orElse(null);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        invoiceService.delete(id);
     }
 }

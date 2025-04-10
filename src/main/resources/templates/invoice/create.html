@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base :: head">
+    <meta charset="UTF-8">
+    <title>ZenHotel - Create Invoice</title>
+</head>
+<body>
+<div th:replace="fragments/base :: base">
+    <main class="main" th:fragment="content">
+        <!-- DESCRIPCIÓN -->
+        <div class="main-description">
+            <div>
+                <h2>Invoices</h2>
+                <p>*Create a new invoice.</p>
+            </div>
+        </div>
+        <!-- FORMULARIO -->
+        <section class="main-content">
+            <form th:action="@{/invoice/save}" method="post" th:object="${invoice}">
+                <div class="register">
+                    <input type="hidden" th:field="*{idinvoice}">
+
+                    <label for="booking">Booking</label>
+                    <select id="booking" th:field="*{booking}" required>
+                        <option th:each="b : ${bookings}" th:value="${b}" th:text="${b.idbooking}"></option>
+                    </select>
+
+                    <label for="paymentmethod">Payment Method</label>
+                    <select id="paymentmethod" th:field="*{paymentmethod}" required>
+                        <option th:each="pm : ${paymentMethods}" th:value="${pm}" th:text="${pm.methodname}"></option>
+                    </select>
+
+                    <label for="paymentstatus">Payment Status</label>
+                    <select id="paymentstatus" th:field="*{paymentstatus}" required>
+                        <option th:each="ps : ${paymentStatuses}" th:value="${ps}" th:text="${ps.statusname}"></option>
+                    </select>
+
+                    <label for="extraservice">Extra Service</label>
+                    <select id="extraservice" th:field="*{extraservice}">
+                        <option th:each="es : ${extraServices}" th:value="${es}" th:text="${es.extraservicename}"></option>
+                    </select>
+
+                    <label for="amount">Amount</label>
+                    <input type="number" step="0.01" id="amount" th:field="*{amount}" required>
+
+                    <label for="paymentdate">Payment Date</label>
+                    <input type="date" id="paymentdate" th:field="*{paymentdate}" required>
+
+                    <button type="submit" class="btn-registrar">Register</button>
+                    <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+</body>
+</html>
