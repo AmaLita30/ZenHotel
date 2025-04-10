@@ -19,13 +19,13 @@
             <form th:action="@{/room/save}" method="post" th:object="${roomDTO}">
                 <div class="register">
                     <label for="txtnumberroom">N.º ROOM</label>
-                    <input type="text" id="txtnumberroom" th:field="*{roomnum}">
+                    <input type="text" id="txtnumberroom" th:field="*{roomnum}" required>
 
                     <label for="txtprice">PRICE</label>
-                    <input type="text" id="txtprice" th:field="*{price}">
+                    <input type="text" id="txtprice" th:field="*{price}" required>
 
                     <label for="txtdescription">DESCRIPTION</label>
-                    <input type="text" id="txtdescription" th:field="*{roomdescription}">
+                    <input type="text" id="txtdescription" th:field="*{roomdescription}" required>
 
                     <label for="cbotype">TYPE</label>
                     <select th:field="*{idroomtype}" id="cbotype">

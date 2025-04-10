@@ -45,7 +45,14 @@ public class RoomService {
     }
 
     public void saveRoomDto(RoomDto roomDto){
-        RoomModel room = new RoomModel();
+        RoomModel room;
+
+        if (roomDto.getIdroom() != null) {
+            room = roomRepository.findById(roomDto.getIdroom()).orElse(new RoomModel());
+        } else {
+            room = new RoomModel();
+        }
+
         room.setPrice(roomDto.getPrice());
         room.setRoomnum(roomDto.getRoomnum());
         room.setRoomdescription(roomDto.getRoomdescription());
@@ -53,7 +60,22 @@ public class RoomService {
         RoomTypeModel type = roomTypeRepository.findById(roomDto.getIdroomtype()).orElse(null);
         room.setRoomstatus(status);
         room.setRoomtype(type);
-
         roomRepository.save(room);
+    }
+
+    public RoomDto getRoomDtoById(int id) {
+        RoomModel roomModel = getRoomById(id);
+        if (roomModel == null) {
+            return null;
+        }
+
+        RoomDto roomDto = new RoomDto();
+        roomDto.setIdroom(roomModel.getIdroom());
+        roomDto.setRoomnum(roomModel.getRoomnum());
+        roomDto.setPrice(roomModel.getPrice());
+        roomDto.setRoomdescription(roomModel.getRoomdescription());
+        roomDto.setIdroomtype(roomModel.getRoomtype().getIdroomtype());
+        roomDto.setIdstatus(roomModel.getRoomstatus().getIdstatus());
+        return roomDto;
     }
 }

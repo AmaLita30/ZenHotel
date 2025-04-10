@@ -35,6 +35,14 @@ public class RoomController {
         return "room/create";
     }
 
+    @GetMapping("/edit/{id}")
+    public String edit(Model model, @PathVariable int id){
+        model.addAttribute("statuses", roomStatusService.getRoomStatuses());
+        model.addAttribute("types", roomTypeService.getRoomTypes());
+        model.addAttribute("roomDTO", roomService.getRoomDtoById(id));
+        return "room/edit";
+    }
+
     @PostMapping("/save")
     public String save(@ModelAttribute("room") RoomDto roomDto){
         roomService.saveRoomDto(roomDto);
