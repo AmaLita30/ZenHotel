@@ -45,29 +45,32 @@ public class RoomService {
     }
 
     public void saveRoomDto(RoomDto roomDto){
-        RoomModel room;
-
         if (roomDto.getIdroom() != null) {
-            room = roomRepository.findById(roomDto.getIdroom()).orElse(new RoomModel());
+            // Es una actualización
+            roomRepository.UpdateRoom(
+                roomDto.getRoomnum(),
+                roomDto.getPrice(),
+                roomDto.getRoomdescription(),
+                roomDto.getIdroomtype(),
+                roomDto.getIdstatus(),
+                roomDto.getIdroom()
+            );
         } else {
-            room = new RoomModel();
+            // Es un registro nuevo
+            RoomModel room = new RoomModel();
+            room.setRoomnum(roomDto.getRoomnum());
+            room.setPrice(roomDto.getPrice());
+            room.setRoomdescription(roomDto.getRoomdescription());
+            RoomTypeModel roomType = roomTypeRepository.findById(roomDto.getIdroomtype()).orElse(null);
+            RoomStatusModel roomStatus = roomStatusRepository.findById(roomDto.getIdstatus()).orElse(null);
+            room.setRoomtype(roomType);
+            room.setRoomstatus(roomStatus);
+            roomRepository.save(room);
         }
-
-        room.setPrice(roomDto.getPrice());
-        room.setRoomnum(roomDto.getRoomnum());
-        room.setRoomdescription(roomDto.getRoomdescription());
-        RoomStatusModel status = roomStatusRepository.findById(roomDto.getIdstatus()).orElse(null);
-        RoomTypeModel type = roomTypeRepository.findById(roomDto.getIdroomtype()).orElse(null);
-        room.setRoomstatus(status);
-        room.setRoomtype(type);
-        roomRepository.save(room);
     }
 
     public RoomDto getRoomDtoById(int id) {
         RoomModel roomModel = getRoomById(id);
-        if (roomModel == null) {
-            return null;
-        }
 
         RoomDto roomDto = new RoomDto();
         roomDto.setIdroom(roomModel.getIdroom());
