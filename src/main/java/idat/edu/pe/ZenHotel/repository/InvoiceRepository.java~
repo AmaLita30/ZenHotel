@@ -13,7 +13,7 @@ public interface InvoiceRepository extends JpaRepository<InvoiceModel, Integer> 
     @Modifying(clearAutomatically = true)
     @Transactional
     @Query(value = """
-        UPDATE invoice
+        UPDATE room
         SET idbooking = :idbooking,
             idpaymentmethod = :idpaymentmethod,
             idpaymentstatus = :idpaymentstatus,

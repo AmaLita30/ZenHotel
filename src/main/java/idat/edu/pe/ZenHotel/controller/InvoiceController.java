@@ -46,7 +46,7 @@ public class InvoiceController {
 
     @GetMapping("/edit/{id}")
     public String edit(Model model, @PathVariable int id) {
-        model.addAttribute("invoice", invoiceService.getInvoiceById(id));
+        model.addAttribute("invoice", invoiceService.getInvoiceDtoById(id));
         model.addAttribute("bookings", bookingService.getBookings());
         model.addAttribute("paymentmethods", paymentMethodService.getPaymentMethods());
         model.addAttribute("paymentstatuses", paymentStatusService.getPaymentStatus());

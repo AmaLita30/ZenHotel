@@ -43,7 +43,7 @@
                     <td th:text="${invoice.amount}"></td>
                     <td th:text="${invoice.paymentdate}"></td>
                     <td>
-                        <a th:href="@{/invoice/edit/{id}(id=${invoice.idinvoice})}" class="edit"> <!--th:href="@{/booking/edit/{id}(id=${booking.idbooking})}"-->
+                        <a th:href="@{/invoice/edit/{id}(id=${invoice.idinvoice})} class="edit"> <!--th:href="@{/booking/edit/{id}(id=${booking.idbooking})}"-->
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
                     </td>

@@ -34,9 +34,7 @@
                 </tr>
             </table>
         </section>
-        <br>
         <hr>
-        <br>
         <section class="main-content">
             <form th:action="@{/booking/save}" method="post" th:object="${booking}">
                 <div class="register">

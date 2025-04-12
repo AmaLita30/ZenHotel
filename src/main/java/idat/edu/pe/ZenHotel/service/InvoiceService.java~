@@ -42,7 +42,7 @@ public class InvoiceService {
                     invoiceDto.getIdextraservice(),
                     invoiceDto.getAmount(),
                     invoiceDto.getPaymentdate(),
-                    invoiceDto.getIdinvoice()
+                    null
             );
         } else {
             InvoiceModel invoice = new InvoiceModel();

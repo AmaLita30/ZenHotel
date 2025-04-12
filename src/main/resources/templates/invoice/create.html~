@@ -18,11 +18,11 @@
         <section class="main-content">
             <form th:action="@{/invoice/save}" method="post" th:object="${invoice}">
                 <div class="register">
-                    <input type="hidden" th:field="*{idinvoice}">
+<!--                    <input type="hidden" th:field="*{idinvoice}">-->
 
                     <label for="bookingdate">BOOKING</label>
-<!--                    <input type="text" id="booking" th:field="*{idbooking}" disabled>-->
-                    <select id="bookingdate" th:field="*{idbooking}" required>
+                    <!--                    <input type="text" id="booking" th:field="*{idbooking}" disabled>-->
+                    <select id="bookingdate" th:field="*{idbooking}" disabled>
                         <option th:each="b : ${bookings}" th:value="${b.idbooking}" th:text="${b.bookingdate}"></option>
                     </select>
 
@@ -37,15 +37,15 @@
                     </select>
 
                     <label for="extraservice">EXTRA SERVICE</label>
-                    <select id="extraservice" th:field="*{idextraservice}" required>
+                    <select id="extraservice" th:field="*{idextraservice}" disabled>
                         <option th:each="es : ${extraservices}" th:value="${es.idextraservice}" th:text="${es.extraservicename}"></option>
                     </select>
 
                     <label for="amount">AMOUNT</label>
-                    <input type="number" step="0.01" id="amount" th:field="*{amount}" required>
+                    <input type="number" step="0.01" id="amount" th:field="*{amount}" disabled>
 
                     <label for="paymentdate">PAYMENT DATE</label>
-                    <input type="date" id="paymentdate" th:field="*{paymentdate}" required>
+                    <input type="date" id="paymentdate" th:field="*{paymentdate}" disabled>
 
                     <button type="submit" class="btn-registrar">Register</button>
                     <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>

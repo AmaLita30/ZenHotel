@@ -18,32 +18,33 @@
         <section class="main-content">
             <form th:action="@{/invoice/save}" method="post" th:object="${invoice}">
                 <div class="register">
-                    <input type="hidden" th:field="*{idinvoice}">
+<!--                    <input type="hidden" th:field="*{idinvoice}">-->
 
-                    <label for="booking">Booking</label>
-                    <select id="booking" th:field="*{booking}" required>
-                        <option th:each="b : ${bookings}" th:value="${b}" th:text="${b.idbooking}"></option>
+                    <label for="bookingdate">BOOKING</label>
+                    <!--                    <input type="text" id="booking" th:field="*{idbooking}" disabled>-->
+                    <select id="bookingdate" th:field="*{idbooking}" required>
+                        <option th:each="b : ${bookings}" th:value="${b.idbooking}" th:text="${b.bookingdate}"></option>
                     </select>
 
-                    <label for="paymentmethod">Payment Method</label>
-                    <select id="paymentmethod" th:field="*{paymentmethod}" required>
-                        <option th:each="pm : ${paymentMethods}" th:value="${pm}" th:text="${pm.methodname}"></option>
+                    <label for="paymentmethod">PAYMENT METHOD</label>
+                    <select id="paymentmethod" th:field="*{idpaymentmethod}" required>
+                        <option th:each="pm : ${paymentmethods}" th:value="${pm.idpaymentmethod}" th:text="${pm.paymentmethodname}"></option>
                     </select>
 
-                    <label for="paymentstatus">Payment Status</label>
-                    <select id="paymentstatus" th:field="*{paymentstatus}" required>
-                        <option th:each="ps : ${paymentStatuses}" th:value="${ps}" th:text="${ps.statusname}"></option>
+                    <label for="paymentstatus">PAYMENT STATUS</label>
+                    <select id="paymentstatus" th:field="*{idpaymentstatus}" required>
+                        <option th:each="ps : ${paymentstatuses}" th:value="${ps.idpaymentstatus}" th:text="${ps.paymentstatusname}"></option>
                     </select>
 
-                    <label for="extraservice">Extra Service</label>
-                    <select id="extraservice" th:field="*{extraservice}">
-                        <option th:each="es : ${extraServices}" th:value="${es}" th:text="${es.extraservicename}"></option>
+                    <label for="extraservice">EXTRA SERVICE</label>
+                    <select id="extraservice" th:field="*{idextraservice}" required>
+                        <option th:each="es : ${extraservices}" th:value="${es.idextraservice}" th:text="${es.extraservicename}"></option>
                     </select>
 
-                    <label for="amount">Amount</label>
+                    <label for="amount">AMOUNT</label>
                     <input type="number" step="0.01" id="amount" th:field="*{amount}" required>
 
-                    <label for="paymentdate">Payment Date</label>
+                    <label for="paymentdate">PAYMENT DATE</label>
                     <input type="date" id="paymentdate" th:field="*{paymentdate}" required>
 
                     <button type="submit" class="btn-registrar">Register</button>
