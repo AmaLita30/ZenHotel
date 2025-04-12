@@ -10,7 +10,7 @@ public class EmployeeDto {
     private String dni;
     private String phone;
     private String email;
-    private Integer rolename;
+    private Integer idrole;
 
     public Integer getIdemployee() {
         return idemployee;
@@ -84,11 +84,12 @@ public class EmployeeDto {
         this.email = email;
     }
 
-    public Integer getRolename() {
-        return rolename;
+
+    public Integer getIdrole() {
+        return idrole;
     }
 
-    public void setRolename(Integer rolename) {
-        this.rolename = rolename;
+    public void setIdrole(Integer idrole) {
+        this.idrole = idrole;
     }
 }

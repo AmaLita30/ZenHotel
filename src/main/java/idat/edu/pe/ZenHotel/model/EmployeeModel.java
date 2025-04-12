@@ -15,7 +15,7 @@ public class EmployeeModel{
     private String dni;
     private String phone;
     private String email;
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name = "idrole")
     private RoleModel role;
 

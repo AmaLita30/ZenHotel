@@ -16,7 +16,7 @@
             </div>
             <!-- CONTENIDO -->
             <section class="main-content">
-                <form th:action="@{/employee/save}" method="post" th:object="${employee}">
+                <form th:action="@{/employee/save}" method="post" th:object="${employeeDto}">
                     <div class="register">
                         <input type="hidden" th:field="*{idemployee}" >
 
@@ -44,9 +44,11 @@
                         <label for="email">E-MAIL</label>
                         <input type="email" name="email" placeholder="Example@gmail.com" id="email" th:field="*{email}" required>
 
-                        <label for="role">ROLE</label>
-                        <input type="text" name="role" placeholder="Role" id="role" th:field="*{role.rolename}" required>
-
+                        <label for="cborole">ROLE</label>
+<!--                        <input type="text" name="role" placeholder="Role" id="role" th:field="*{idrole}" required>-->
+                        <select th:field="*{idrole}" id="cborole">
+                            <option th:each="role : ${roles}" th:value="${role.idrole}" th:text="${role.rolename}"></option>
+                        </select>
                         <button type="submit" class="btn-registrar">Save</button>
                         <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
                     </div>
