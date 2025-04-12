@@ -25,12 +25,6 @@ public class EmployeeController {
         return "employee/index";
     }
 
-//    @GetMapping("/create")
-//    public String create(Model model) {
-//        model.addAttribute("employee", new EmployeeModel());
-//        return ("employee/create");
-//    }
-
     @GetMapping("/edit/{id}")
     public String edit(Model model, @PathVariable int id) {
         model.addAttribute("employeeDto", employeeService.getEmployeeDtoById(id));

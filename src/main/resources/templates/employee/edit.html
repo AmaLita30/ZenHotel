@@ -45,11 +45,10 @@
                         <input type="email" name="email" placeholder="Example@gmail.com" id="email" th:field="*{email}" required>
 
                         <label for="cborole">ROLE</label>
-<!--                        <input type="text" name="role" placeholder="Role" id="role" th:field="*{idrole}" required>-->
                         <select th:field="*{idrole}" id="cborole">
                             <option th:each="role : ${roles}" th:value="${role.idrole}" th:text="${role.rolename}"></option>
                         </select>
-                        <button type="submit" class="btn-registrar">Save</button>
+                        <button type="submit" class="btn-registrar">Update</button>
                         <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
                     </div>
                 </form>

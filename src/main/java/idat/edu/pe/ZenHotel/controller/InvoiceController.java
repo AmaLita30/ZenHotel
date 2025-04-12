@@ -59,26 +59,5 @@ public class InvoiceController {
         invoiceService.saveInvoiceDto(invoiceDto);
         return "redirect:/invoice";
     }
-    //    @Autowired
-//    private InvoiceService invoiceService;
-//
-//    @GetMapping
-//    public List<InvoiceModel> listAll() {
-//        return invoiceService.listAll();
-//    }
-//
-//    @PostMapping
-//    public InvoiceModel create(@RequestBody InvoiceDto dto) {
-//        return invoiceService.save(dto);
-//    }
-//
-//    @GetMapping("/{id}")
-//    public InvoiceModel getById(@PathVariable Integer id) {
-//        return invoiceService.getById(id).orElse(null);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public void delete(@PathVariable Integer id) {
-//        invoiceService.delete(id);
-//    }
+
 }

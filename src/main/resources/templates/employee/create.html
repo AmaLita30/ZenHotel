@@ -11,17 +11,16 @@
         <div class=main-description>
             <div>
                 <h2>Employee</h2>
-                <p>*Update Employee.</p>
+                <p>*Add New Employee.</p>
             </div>
         </div>
         <!-- CONTENIDO -->
         <section class="main-content">
-            <form th:action="@{/employee/save}" method="post" th:object="${employee}">
+            <form th:action="@{/employee/save}" method="post" th:object="${employeeDto}">
                 <div class="register">
-                    <input type="hidden" th:field="*{idemployee}" >
 
                     <label for="code">USER CODE</label>
-                    <input type="text" name="code" id="code" th:field="*{employeecode}" required>
+                    <input type="text" name="code" id="code" placeholder="Example001" th:field="*{employeecode}" required>
 
                     <label for="fatherLast">FATHER'S LAST NAME</label>
                     <input type="text" placeholder="Father's Last Name" id="fatherLast" th:field="*{fatherlastname}" required>
@@ -44,9 +43,10 @@
                     <label for="email">E-MAIL</label>
                     <input type="email" name="email" placeholder="Example@gmail.com" id="email" th:field="*{email}" required>
 
-                    <label for="role">ROLE</label>
-                    <input type="text" name="role" placeholder="Role" id="role" th:field="*{role.rolename}" required>
-
+                    <label for="cborole">ROLE</label>
+                    <select th:field="*{idrole}" id="cborole">
+                        <option th:each="role : ${roles}" th:value="${role.idrole}" th:text="${role.rolename}"></option>
+                    </select>
                     <button type="submit" class="btn-registrar">Save</button>
                     <button type="button" onclick="history.back()" class="btn-cancelar">Cancel</button>
                 </div>

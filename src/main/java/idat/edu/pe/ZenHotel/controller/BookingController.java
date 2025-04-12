@@ -41,6 +41,14 @@ public class BookingController {
         return "booking/create";
     }
 
+    @GetMapping("/edit/{id}")
+    public String edit(Model model, @PathVariable int id){
+        model.addAttribute("room", roomService.getRoomById(id));
+        model.addAttribute("customers", customerService.getCustomers());
+        model.addAttribute("booking", bookingService.getBookingDtoById(id));
+        return "booking/edit";
+    }
+
     @PostMapping("/save")
     public String save(@ModelAttribute("booking") BookingDto bookingDto){
         bookingService.saveBookingDto(bookingDto);

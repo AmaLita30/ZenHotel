@@ -45,4 +45,17 @@ public class BookingService {
         booking.setRoom(room);
         bookingRepository.save(booking);
     }
+
+    public BookingDto getBookingDtoById(int id) {
+        BookingModel bookingModel = getBookingById(id);
+
+        BookingDto bookingDto = new BookingDto();
+        bookingDto.setIdbooking(bookingModel.getIdbooking());
+        bookingDto.setBookingdate(bookingModel.getBookingdate());
+        bookingDto.setCheckindate(bookingModel.getCheckindate());
+        bookingDto.setCheckoutdate(bookingModel.getCheckoutdate());
+        bookingDto.setIdroom(bookingModel.getRoom().getIdroom());
+        bookingDto.setIdcustomer(bookingModel.getCustomer().getIdcustomer());
+        return bookingDto;
+    }
 }

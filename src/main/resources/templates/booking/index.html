@@ -39,7 +39,7 @@
                         <td th:text="${booking.checkoutdate}"></td>
                         <td th:text="${booking.room.price}"></td>
                         <td>
-                            <a href="#" class="edit"> <!--th:href="@{/booking/edit/{id}(id=${booking.idbooking})}"-->
+                            <a th:href="@{/booking/edit/{id}(id=${booking.idbooking})}" class="edit">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
                         </td>
