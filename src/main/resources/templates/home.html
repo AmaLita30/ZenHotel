@@ -21,9 +21,6 @@
                         <canvas id="barChart" class="barChart"></canvas>
                     </div>
                     <div class="analitic-box">
-                        <canvas id="lineChart" class="lineChart"></canvas>
-                    </div>
-                    <div class="analitic-box">
                         <canvas id="pieChart" class="pieChart"></canvas>
                     </div>
                 </section>
@@ -42,28 +39,45 @@
                         <p class="yellow" th:text="${occupiedCount}">0</p>
                     </div>
                     <div class="analitic-box-data">
-                        <p>Total Mensual</p>
-                        <p class="orange">10,099.75</p>
+                        <p>Total Income</p>
+                        <p class="orange" th:text="${totalIncome}">0</p>
+                    </div>
+                </section>
+                <section class="analitics-date">
+                    <div class="analitic-box">
+                        <canvas id="lineChart" class="lineChart"></canvas>
                     </div>
                 </section>
             </section>
         </main>
     </div>
     <script th:inline="javascript">
-        const labels = [[${categorias}]];
+        const roomStatusLabels = [[${categorias}]] || [];
+        const roomStatusValues = [[${valores}]] || [];
+
         const data = {
-            labels: labels,
+            labels: roomStatusLabels,
             datasets: [{
                 label: 'Habitaciones por Estado',
-                data: [[${valores}]],
+                data: roomStatusValues,
                 backgroundColor: [
-                  'rgba(54, 162, 235, 0.6)',
-                  'rgba(75, 192, 192, 0.6)',
-                  'rgba(255, 206, 86, 0.6)',
-                  'rgba(255, 99, 132, 0.6)',
-                  'rgba(153, 102, 255, 0.6)',
-                  'rgba(255, 159, 64, 0.6)'
-                ]
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 2,
+                hoverOffset: 8
             }]
         };
 
@@ -71,21 +85,44 @@
             type: 'bar',
             data: data,
             options: {
-                maintainAspectRatio: false,
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Estado Actual de las Habitaciones'
+                        text: 'Estado Actual de las Habitaciones',
+                        font: {
+                            size: 18
+                        }
                     },
                     legend: {
                         display: true,
                         position: 'top'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.dataset.label}: ${context.parsed.y} habitaciones`;
+                            }
+                        }
                     }
                 },
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        },
+                        title: {
+                            display: true,
+                            text: 'Cantidad de Habitaciones'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Estado'
+                        }
                     }
                 }
             }
@@ -93,47 +130,64 @@
 
         new Chart(document.getElementById('barChart'), config);
     </script>
+
     <script th:inline="javascript">
-        const labels2 = [[${categorias}]]
-        const dataValues = [[${valores}]]
+        /*<![CDATA[*/
+        const labels2 = /*[[${date}]]*/ [];
+        const dataValues = /*[[${amount}]]*/ [];
 
-    const data2 = {
-        labels: labels2,
-        datasets: [{
-            label: 'Cantidad de Habitaciones por Estado',
-            data: dataValues,
-            fill: true,
-            borderColor: 'rgb(75, 192, 192)',
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            tension: 0.1
-        }]
-    };
+        const data2 = {
+            labels: labels2,
+            datasets: [{
+                label: 'Ingreso total por día (S/.)',
+                data: dataValues,
+                fill: true,
+                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                tension: 0.1
+            }]
+        };
 
-    const config2 = {
-        type: 'line',
-        data: data2,
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: {
-                position: 'top',
-              },
-              title: {
-                display: true,
-                text: 'Evolución o Distribución por Estado de Habitación'
-              }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true
+        const config2 = {
+            type: 'line',
+            data: data2,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Evolución de Ingresos Diarios',
+                        font: {
+                            size: 18
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Ingresos (S/.)' //
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Fecha de pago' //
+                        }
+                    }
                 }
             }
-        }
-    };
+        };
 
-    new Chart(document.getElementById('lineChart'), config2);
+        new Chart(document.getElementById('lineChart'), config2);
+        /*]]>*/
     </script>
+
 
     <script th:inline="javascript">
 
@@ -161,7 +215,7 @@
                   'rgba(153, 102, 255, 1)',
                   'rgba(255, 159, 64, 1)'
                 ],
-                borderWidth: 1
+                borderWidth: 3
             }]
         };
 
@@ -172,13 +226,16 @@
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                  legend: {
-                    position: 'top',
-                  },
-                  title: {
-                    display: true,
-                    text: 'Distribución de Habitaciones por Estado'
-                  }
+                    legend: {
+                        position: 'right',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Distribución de Habitaciones por Estado',
+                        font: {
+                            size: 18
+                        }
+                    }
                 }
             }
         };

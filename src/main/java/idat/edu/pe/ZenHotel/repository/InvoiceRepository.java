@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 
 public interface InvoiceRepository extends JpaRepository<InvoiceModel, Integer> {
     @Modifying(clearAutomatically = true)
@@ -31,4 +32,10 @@ public interface InvoiceRepository extends JpaRepository<InvoiceModel, Integer> 
             @Param("paymentdate") Date paymentdate,
             @Param("idinvoice") Integer idinvoice
     );
+
+    @Query("SELECT SUM(i.amount) FROM InvoiceModel i")
+    Double totalIncome();
+
+    @Query(value = "SELECT SUM(amount), paymentdate FROM invoice GROUP BY paymentdate", nativeQuery = true)
+    List<Object[]> findDailyIncome();
 }
