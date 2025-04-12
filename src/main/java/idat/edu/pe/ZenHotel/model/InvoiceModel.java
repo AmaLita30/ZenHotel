@@ -1,5 +1,7 @@
 package idat.edu.pe.ZenHotel.model;
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 @Entity
@@ -21,6 +23,7 @@ public class InvoiceModel {
     @JoinColumn(name = "idextraservice")
     private ExtraServiceModel extraservice;
     private Double amount;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date paymentdate;
 
     public Integer getIdinvoice() {

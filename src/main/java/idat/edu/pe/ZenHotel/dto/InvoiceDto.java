@@ -1,5 +1,7 @@
 package idat.edu.pe.ZenHotel.dto;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class InvoiceDto {
@@ -9,6 +11,7 @@ public class InvoiceDto {
     private Integer idpaymentstatus;
     private Integer idextraservice;
     private Double amount;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date paymentdate;
 
     // Getters y Setters
