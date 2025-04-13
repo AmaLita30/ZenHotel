@@ -4,9 +4,11 @@ import idat.edu.pe.ZenHotel.dto.BookingDto;
 import idat.edu.pe.ZenHotel.model.BookingModel;
 import idat.edu.pe.ZenHotel.model.CustomerModel;
 import idat.edu.pe.ZenHotel.model.RoomModel;
+import idat.edu.pe.ZenHotel.model.RoomStatusModel;
 import idat.edu.pe.ZenHotel.repository.BookingRepository;
 import idat.edu.pe.ZenHotel.repository.CustomerRepository;
 import idat.edu.pe.ZenHotel.repository.RoomRepository;
+import idat.edu.pe.ZenHotel.repository.RoomStatusRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -15,11 +17,13 @@ public class BookingService {
     private final BookingRepository bookingRepository;
     private final CustomerRepository customerRepository;
     private final RoomRepository roomRepository;
+    private final RoomStatusRepository roomStatusRepository;
 
-    public BookingService(BookingRepository bookingRepository, CustomerRepository customerRepository, RoomRepository roomRepository) {
+    public BookingService(BookingRepository bookingRepository, CustomerRepository customerRepository, RoomRepository roomRepository, RoomStatusRepository roomStatusRepository) {
         this.bookingRepository = bookingRepository;
         this.customerRepository = customerRepository;
         this.roomRepository = roomRepository;
+        this.roomStatusRepository = roomStatusRepository;
     }
 
     public List<BookingModel> getBookings() {
@@ -44,6 +48,12 @@ public class BookingService {
         booking.setCustomer(customer);
         booking.setRoom(room);
         bookingRepository.save(booking);
+
+        if (room != null) {
+            RoomStatusModel reservedStatus = roomStatusRepository.findByRoomstatusname("Reserved");
+            room.setRoomstatus(reservedStatus);
+            roomRepository.save(room);
+        }
     }
 
     public BookingDto getBookingDtoById(int id) {
